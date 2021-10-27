@@ -37,7 +37,7 @@
 
   <!-- BEGIN: Custom CSS-->
 
-  <link rel="stylesheet" type="text/css" href="{{ asset('app-assets/css/style.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/style.css') }}">
   <!-- END: Custom CSS-->
 
 </head>

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BlogController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +21,5 @@ Route::get('/', function () {
 Route::get('/main/dashboard', function () {
     return view('admin.dashboard.index');
 })->middleware(['verified']);
+
+Route::resource('/main/blog', BlogController::class)->middleware(['verified']);

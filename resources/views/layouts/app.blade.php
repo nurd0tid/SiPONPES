@@ -1,433 +1,574 @@
 <!DOCTYPE html>
-<html lang="en">
+<!--
+Template Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
+Author: PixInvent
+Website: http://www.pixinvent.com/
+Contact: hello@pixinvent.com
+Follow: www.twitter.com/pixinvents
+Like: www.facebook.com/pixinvents
+Purchase: https://1.envato.market/vuexy_admin
+Renew Support: https://1.envato.market/vuexy_admin
+License: You must have a valid license purchased only from themeforest(the above link) in order to legally use the theme for your project.
+
+-->
+<html class="loading" lang="en" data-textdirection="ltr">
+<!-- BEGIN: Head-->
 
 <head>
-  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="description" content="Theta is a bootstrap & laravel admin dashboard template">
-  <meta name="keywords" content="admin, admin dashboard, admin panel, admin template, analytics, bootstrap 4, crm, laravel admin, responsive, sass support, ui kits">
-  <meta name="author" content="Themesbox17">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
-  <title>Theta - Bootstrap + Laravel Admin Dashboard Template</title>
-  <!-- Fevicon -->
-  <link rel="shortcut icon" href="{{ asset('assets/images/favicon.ico') }}">
-  <!-- Start css -->
-  <!-- Switchery css -->
-  <link href="{{ asset('assets/plugins/switchery/switchery.min.css') }}" rel="stylesheet">
-  @stack('css-datatables')
-  <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css">
-  <link href="{{ asset('assets/css/icons.css') }}" rel="stylesheet" type="text/css">
-  <link href="{{ asset('assets/css/flag-icon.min.css') }}" rel="stylesheet" type="text/css">
-  <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet" type="text/css">
-  <!-- End css -->
-</head>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0,minimal-ui">
+  <meta name="description" content="Vuexy admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities.">
+  <meta name="keywords" content="admin template, Vuexy admin template, dashboard template, flat admin template, responsive admin template, web app">
+  <meta name="author" content="PIXINVENT">
+  <title>Layout Empty - Vuexy - Bootstrap HTML admin template</title>
+  <link rel="apple-touch-icon" href="{{ asset('app-assets/images/ico/apple-icon-120.png') }}">
+  <link rel="shortcut icon" type="image/x-icon" href="{{ asset('app-assets/images/ico/favicon.ico') }}">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600" rel="stylesheet">
 
-<body class="vertical-layout">
-  <!-- Start Infobar Notifications Sidebar -->
-  <div id="infobar-notifications-sidebar" class="infobar-notifications-sidebar">
-    <div class="infobar-notifications-sidebar-head d-flex w-100 justify-content-between">
-      <h4>Notifications</h4><a href="javascript:void(0)" id="infobar-notifications-close" class="infobar-notifications-close"><img src="{{ asset('assets/images/svg-icon/close.svg') }}" class="img-fluid menu-hamburger-close" alt="close"></a>
-    </div>
-    <div class="infobar-notifications-sidebar-body">
-      <ul class="nav nav-pills nav-justified" id="infobar-pills-tab" role="tablist">
-        <li class="nav-item">
-          <a class="nav-link active" id="pills-messages-tab" data-toggle="pill" href="#pills-messages" role="tab" aria-controls="pills-messages" aria-selected="true">Messages</a>
+  <!-- BEGIN: Vendor CSS-->
+  <link rel="stylesheet" type="text/css" href="{{ asset('app-assets/vendors/css/vendors.min.css') }}">
+  <!-- END: Vendor CSS-->
+
+  <!-- BEGIN: Theme CSS-->
+  <link rel="stylesheet" type="text/css" href="{{ asset('app-assets/css/bootstrap.min.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ asset('app-assets/css/bootstrap-extended.min.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ asset('app-assets/css/colors.min.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ asset('app-assets/css/components.min.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ asset('app-assets/css/themes/dark-layout.min.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ asset('app-assets/css/themes/bordered-layout.min.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ asset('app-assets/css/themes/semi-dark-layout.min.css') }}">
+
+  <!-- BEGIN: Page CSS-->
+  <link rel="stylesheet" type="text/css" href="{{ asset('app-assets/css/core/menu/menu-types/vertical-menu.min.css') }}">
+  <!-- END: Page CSS-->
+
+  <!-- BEGIN: Custom CSS-->
+  <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/style.css') }}">
+  <!-- END: Custom CSS-->
+
+</head>
+<!-- END: Head-->
+
+<!-- BEGIN: Body-->
+
+<body class="vertical-layout vertical-menu-modern  navbar-floating footer-static  " data-open="click" data-menu="vertical-menu-modern" data-col="">
+
+  <!-- BEGIN: Header-->
+  <nav class="header-navbar navbar navbar-expand-lg align-items-center floating-nav navbar-light navbar-shadow container-xxl">
+    <div class="navbar-container d-flex content">
+      <div class="bookmark-wrapper d-flex align-items-center">
+        <ul class="nav navbar-nav d-xl-none">
+          <li class="nav-item"><a class="nav-link menu-toggle" href="#"><i class="ficon" data-feather="menu"></i></a></li>
+        </ul>
+        <ul class="nav navbar-nav bookmark-icons">
+          <li class="nav-item d-none d-lg-block"><a class="nav-link" href="app-email.html" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Email"><i class="ficon" data-feather="mail"></i></a></li>
+          <li class="nav-item d-none d-lg-block"><a class="nav-link" href="app-chat.html" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Chat"><i class="ficon" data-feather="message-square"></i></a></li>
+          <li class="nav-item d-none d-lg-block"><a class="nav-link" href="app-calendar.html" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Calendar"><i class="ficon" data-feather="calendar"></i></a></li>
+          <li class="nav-item d-none d-lg-block"><a class="nav-link" href="app-todo.html" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Todo"><i class="ficon" data-feather="check-square"></i></a></li>
+        </ul>
+        <ul class="nav navbar-nav">
+          <li class="nav-item d-none d-lg-block"><a class="nav-link bookmark-star"><i class="ficon text-warning" data-feather="star"></i></a>
+            <div class="bookmark-input search-input">
+              <div class="bookmark-input-icon"><i data-feather="search"></i></div>
+              <input class="form-control input" type="text" placeholder="Bookmark" tabindex="0" data-search="search">
+              <ul class="search-list search-list-bookmark"></ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <ul class="nav navbar-nav align-items-center ms-auto">
+        <li class="nav-item dropdown dropdown-language"><a class="nav-link dropdown-toggle" id="dropdown-flag" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="flag-icon flag-icon-us"></i><span class="selected-language">English</span></a>
+          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdown-flag"><a class="dropdown-item" href="#" data-language="en"><i class="flag-icon flag-icon-us"></i> English</a><a class="dropdown-item" href="#" data-language="fr"><i class="flag-icon flag-icon-fr"></i> French</a><a class="dropdown-item" href="#" data-language="de"><i class="flag-icon flag-icon-de"></i> German</a><a class="dropdown-item" href="#" data-language="pt"><i class="flag-icon flag-icon-pt"></i> Portuguese</a></div>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" id="pills-emails-tab" data-toggle="pill" href="#pills-emails" role="tab" aria-controls="pills-emails" aria-selected="false">Emails</a>
+        <li class="nav-item d-none d-lg-block"><a class="nav-link nav-link-style"><i class="ficon" data-feather="moon"></i></a></li>
+        <li class="nav-item nav-search"><a class="nav-link nav-link-search"><i class="ficon" data-feather="search"></i></a>
+          <div class="search-input">
+            <div class="search-input-icon"><i data-feather="search"></i></div>
+            <input class="form-control input" type="text" placeholder="Explore Vuexy..." tabindex="-1" data-search="search">
+            <div class="search-input-close"><i data-feather="x"></i></div>
+            <ul class="search-list search-list-main"></ul>
+          </div>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" id="pills-actions-tab" data-toggle="pill" href="#pills-actions" role="tab" aria-controls="pills-actions" aria-selected="false">Actions</a>
-        </li>
-      </ul>
-      <div class="tab-content" id="infobar-pills-tabContent">
-        <div class="tab-pane fade show active" id="pills-messages" role="tabpanel" aria-labelledby="pills-messages-tab">
-          <ul class="list-unstyled">
-            <li class="media">
-              <img class="mr-3 align-self-center rounded-circle" src="{{ asset('assets/images/users/girl.svg') }}" alt="Generic placeholder image">
-              <div class="media-body">
-                <h5>Amy Adams<span class="badge badge-success">1</span><span class="timing">Jan 22</span></h5>
-                <p>Hey!! What are you doing tonight ?</p>
+        <li class="nav-item dropdown dropdown-cart me-25"><a class="nav-link" href="#" data-bs-toggle="dropdown"><i class="ficon" data-feather="shopping-cart"></i><span class="badge rounded-pill bg-primary badge-up cart-item-count">6</span></a>
+          <ul class="dropdown-menu dropdown-menu-media dropdown-menu-end">
+            <li class="dropdown-menu-header">
+              <div class="dropdown-header d-flex">
+                <h4 class="notification-title mb-0 me-auto">My Cart</h4>
+                <div class="badge rounded-pill badge-light-primary">4 Items</div>
               </div>
             </li>
-            <li class="media">
-              <img class="mr-3 align-self-center rounded-circle" src="{{ asset('assets/images/users/boy.svg') }}" alt="Generic placeholder image">
-              <div class="media-body">
-                <h5>James Simpsons<span class="badge badge-success">2</span><span class="timing">Feb 15</span></h5>
-                <p>What's up ???</p>
-              </div>
-            </li>
-            <li class="media">
-              <img class="mr-3 align-self-center rounded-circle" src="{{ asset('assets/images/users/men.svg') }}" alt="Generic placeholder image">
-              <div class="media-body">
-                <h5>Mark Witherspoon<span class="badge badge-success">3</span><span class="timing">Mar 03</span></h5>
-                <p>I will be late today in office.</p>
-              </div>
-            </li>
-            <li class="media">
-              <img class="mr-3 align-self-center rounded-circle" src="{{ asset('assets/images/users/women.svg') }}" alt="Generic placeholder image">
-              <div class="media-body">
-                <h5>Jenniffer Wills<span class="badge badge-success">4</span><span class="timing">Apr 05</span></h5>
-                <p>Venture presentation is ready.</p>
-              </div>
-            </li>
-          </ul>
-        </div>
-        <div class="tab-pane fade" id="pills-emails" role="tabpanel" aria-labelledby="pills-emails-tab">
-          <ul class="list-unstyled">
-            <li class="media">
-              <span class="mr-3 align-self-center img-icon">N</span>
-              <div class="media-body">
-                <h5>Nelson Smith<span class="timing">Jan 22</span></h5>
-                <p><span class="badge badge-danger-inverse">WORK</span>Salary has been processed.</p>
-              </div>
-            </li>
-            <li class="media">
-              <span class="mr-3 align-self-center img-icon">C</span>
-              <div class="media-body">
-                <h5>Courtney Cox<i class="feather icon-star text-warning ml-2"></i><span class="timing">Feb 15</span></h5>
-                <p><span class="badge badge-success-inverse">URGENT</span>New product launching...</p>
-              </div>
-            </li>
-            <li class="media">
-              <span class="mr-3 align-self-center img-icon">R</span>
-              <div class="media-body">
-                <h5>Rachel White<span class="timing">Mar 03</span></h5>
-                <p><span class="badge badge-secondary-inverse">ORDER</span><span class="badge badge-info-inverse">SHOPPING</span>Your order has been...</p>
-              </div>
-            </li>
-            <li class="media">
-              <span class="mr-3 align-self-center img-icon">F</span>
-              <div class="media-body">
-                <h5>Freepik<span class="timing">Mar 03</span></h5>
-                <p><a href="#" class="badge badge-primary mr-2">VERIFY NOW</a>New Sign verification req...</p>
-              </div>
-            </li>
-          </ul>
-        </div>
-        <div class="tab-pane fade" id="pills-actions" role="tabpanel" aria-labelledby="pills-actions-tab">
-          <ul class="list-unstyled">
-            <li class="media">
-              <span class="mr-3 action-icon badge badge-success-inverse"><i class="feather icon-check"></i></span>
-              <div class="media-body">
-                <h5 class="action-title">Payment Success !!!</h5>
-                <p class="my-3">We have received your payment toward ad Account : 9876543210. Your Ad is Running.</p>
-                <p><span class="badge badge-danger-inverse">INFO</span><span class="badge badge-info-inverse">STATUS</span><span class="timing">Today, 09:39 PM</span></p>
-              </div>
-            </li>
-            <li class="media">
-              <span class="mr-3 action-icon badge badge-primary-inverse"><i class="feather icon-calendar"></i></span>
-              <div class="media-body">
-                <h5 class="action-title">Nobita Applied for Leave.</h5>
-                <p class="my-3">Nobita applied for leave due to personal reasons on 22nd Feb.</p>
-                <p><span class="badge badge-success">APPROVE</span><span class="badge badge-danger">REJECT</span><span class="timing">Yesterday, 05:25 PM</span></p>
-              </div>
-            </li>
-            <li class="media">
-              <span class="mr-3 action-icon badge badge-danger-inverse"><i class="feather icon-alert-triangle"></i></span>
-              <div class="media-body">
-                <h5 class="action-title">Alert</h5>
-                <p class="my-3">There has been new Log in fron your account at Melbourne. Mark it safe or report.</p>
-                <p><i class="feather icon-check text-success mr-3"></i><a href="#" class="text-muted">Report Now</a><span class="timing">5 Jan 2019, 02:13 PM</span></p>
-              </div>
-            </li>
-            <li class="media">
-              <span class="mr-3 action-icon badge badge-warning-inverse"><i class="feather icon-award"></i></span>
-              <div class="media-body">
-                <h5 class="action-title">Congratulations !!!</h5>
-                <p class="my-3">Your role in the organization has been changed from Editor to Chief Strategist.</p>
-                <p><span class="badge badge-danger-inverse">ACTIVITY</span><span class="timing">10 Jan 2019, 08:49 PM</span></p>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="infobar-notifications-sidebar-overlay"></div>
-  <!-- End Infobar Notifications Sidebar -->
-  <!-- Start Infobar Setting Sidebar -->
-  <div id="infobar-settings-sidebar" class="infobar-settings-sidebar">
-    <div class="infobar-settings-sidebar-head d-flex w-100 justify-content-between">
-      <h4>Settings</h4><a href="javascript:void(0)" id="infobar-settings-close" class="infobar-settings-close"><img src="{{ asset('assets/images/svg-icon/close.svg') }}" class="img-fluid menu-hamburger-close" alt="close"></a>
-    </div>
-    <div class="infobar-settings-sidebar-body">
-      <div class="custom-color-setting">
-        <div class="row align-items-center">
-          <div class="col-12">
-            <h6 class="mb-3">Select Color</h6>
-          </div>
-          <div class="col-12">
-            <div class="custom-radio-button ml-1">
-              <div class="form-check-inline radio-primary">
-                <input type="radio" id="customRadioInlineSidebar1" name="customRadioInlineSidebar" checked>
-                <label for="customRadioInlineSidebar1"></label>
-              </div>
-              <div class="form-check-inline radio-secondary">
-                <input type="radio" id="customRadioInlineSidebar2" name="customRadioInlineSidebar">
-                <label for="customRadioInlineSidebar2"></label>
-              </div>
-              <div class="form-check-inline radio-success">
-                <input type="radio" id="customRadioInlineSidebar3" name="customRadioInlineSidebar">
-                <label for="customRadioInlineSidebar3"></label>
-              </div>
-              <div class="form-check-inline radio-danger">
-                <input type="radio" id="customRadioInlineSidebar4" name="customRadioInlineSidebar">
-                <label for="customRadioInlineSidebar4"></label>
-              </div>
-              <div class="form-check-inline radio-warning">
-                <input type="radio" id="customRadioInlineSidebar5" name="customRadioInlineSidebar">
-                <label for="customRadioInlineSidebar5"></label>
-              </div>
-              <div class="form-check-inline radio-info">
-                <input type="radio" id="customRadioInlineSidebar6" name="customRadioInlineSidebar">
-                <label for="customRadioInlineSidebar6"></label>
-              </div>
-              <div class="form-check-inline radio-light">
-                <input type="radio" id="customRadioInlineSidebar7" name="customRadioInlineSidebar">
-                <label for="customRadioInlineSidebar7"></label>
-              </div>
-              <div class="form-check-inline radio-dark">
-                <input type="radio" id="customRadioInlineSidebar8" name="customRadioInlineSidebar">
-                <label for="customRadioInlineSidebar8"></label>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="custom-mode-setting">
-        <div class="row align-items-center pb-3">
-          <div class="col-8">
-            <h6 class="mb-0">Night Mode</h6>
-          </div>
-          <div class="col-4 text-right"><input type="checkbox" class="js-switch-night-mode" checked /></div>
-        </div>
-        <div class="row align-items-center">
-          <div class="col-8">
-            <h6 class="mb-0">Navigation Sidebar</h6>
-          </div>
-          <div class="col-4 text-right"><input type="checkbox" class="js-switch-navigation-sidebar" checked /></div>
-        </div>
-      </div>
-      <div class="custom-layout-setting">
-        <div class="row align-items-center pb-3">
-          <div class="col-12">
-            <h6 class="mb-3">Select Account</h6>
-          </div>
-          <div class="col-6">
-            <div class="account-box active">
-              <img src="{{ asset('assets/images/users/boy.svg') }}" class="img-fluid" alt="user">
-              <h5>Shourya</h5>
-              <p>CEO</p>
-            </div>
-          </div>
-          <div class="col-6">
-            <div class="account-box">
-              <img src="{{ asset('assets/images/users/women.svg') }}" class="img-fluid" alt="user">
-              <h5>Amy</h5>
-              <p>COO</p>
-            </div>
-          </div>
-          <div class="col-6">
-            <div class="account-box">
-              <img src="{{ asset('assets/images/users/men.svg') }}" class="img-fluid" alt="user">
-              <h5>John</h5>
-              <p>MD</p>
-            </div>
-          </div>
-          <div class="col-6">
-            <div class="account-box">
-              <p class="dash-analytic-icon"><i class="feather icon-plus font-35"></i></p>
-              <h5>Add</h5>
-              <p>ACCOUNT</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="infobar-settings-sidebar-overlay"></div>
-  <!-- End Infobar Setting Sidebar -->
-  <!-- Start Containerbar -->
-  <div id="containerbar">
-    <!-- Start Leftbar -->
-    <div class="leftbar">
-      <!-- Start Sidebar -->
-      <div class="sidebar">
-        <!-- Start Logobar -->
-        <div class="logobar">
-          <a href="index.html" class="logo logo-large"><img src="{{ asset('assets/images/logo.svg') }}" class="img-fluid" alt="logo"></a>
-          <a href="index.html" class="logo logo-small"><img src="{{ asset('assets/images/small_logo.svg') }}" class="img-fluid" alt="logo"></a>
-        </div>
-        <!-- End Logobar -->
-        <!-- Start Profilebar -->
-        <div class="profilebar text-center">
-          <img src="{{ asset('assets/images/users/profile.svg') }}" class="img-fluid" alt="profile">
-          <div class="profilename">
-            <h5>{{ auth()->user()->name }}</h5>
-            <p>{{ auth()->user()->email }}</p>
-          </div>
-          <div class=" userbox">
-            <ul class="list-inline mb-0">
-              <li class="list-inline-item"><a href="#" class="profile-icon"><img src="{{ asset('assets/images/svg-icon/user.svg') }}" class="img-fluid" alt="user"></a></li>
-              <li class="list-inline-item"><a href="#" class="profile-icon"><img src="{{ asset('assets/images/svg-icon/email.svg') }}" class="img-fluid" alt="email"></a></li>
-              <form action="/auth/logout" method="POST" class="list-inline-item">
-                @csrf
-                <button type="submit" class="profile-icon dropdown-item"><img src="{{ asset('assets/images/svg-icon/logout.svg') }}" class="img-fluid" alt="logout"></button>
-              </form>
-            </ul>
-          </div>
-        </div>
-        <!-- End Profilebar -->
-        <!-- Start Navigationbar -->
-        <div class="navigationbar">
-          <ul class="vertical-menu">
-            <li class="vertical-header">Main</li>
-            <li class="{{ Request::is('dashboard') ? 'active' : '' }}">
-              <a href="/main/dashboard">
-                <i class="feather icon-home"></i><span>Dashboard</span>
-              </a>
-            </li>
-            <li class="{{ Request::is('news') ? 'active' : '' }}">
-              <a href="/main/news">
-                <i class="feather icon-rss"></i><span>News Posts</span>
-              </a>
-            </li>
-          </ul>
-        </div>
-        <!-- End Navigationbar -->
-      </div>
-      <!-- End Sidebar -->
-    </div>
-    <!-- End Leftbar -->
-    <!-- Start Rightbar -->
-    <div class="rightbar">
-      <!-- Start Topbar Mobile -->
-      <div class="topbar-mobile">
-        <div class="row align-items-center">
-          <div class="col-md-12">
-            <div class="mobile-logobar">
-              <a href="index.html" class="mobile-logo"><img src="assets/images/logo.svg') }}" class="img-fluid" alt="logo"></a>
-            </div>
-            <div class="mobile-togglebar">
-              <ul class="list-inline mb-0">
-                <li class="list-inline-item">
-                  <div class="topbar-toggle-icon">
-                    <a class="topbar-toggle-hamburger" href="javascript:void();">
-                      <img src="{{ asset('assets/images/svg-icon/horizontal.svg') }}" class="img-fluid menu-hamburger-horizontal" alt="horizontal">
-                      <img src="{{ asset('assets/images/svg-icon/verticle.svg') }}" class="img-fluid menu-hamburger-vertical" alt="verticle">
-                    </a>
+            <li class="scrollable-container media-list">
+              <div class="list-item align-items-center"><img class="d-block rounded me-1" src="../../../app-assets/images/pages/eCommerce/1.png" alt="donuts" width="62">
+                <div class="list-item-body flex-grow-1"><i class="ficon cart-item-remove" data-feather="x"></i>
+                  <div class="media-heading">
+                    <h6 class="cart-item-title"><a class="text-body" href="app-ecommerce-details.html"> Apple watch 5</a></h6><small class="cart-item-by">By Apple</small>
                   </div>
-                </li>
-                <li class="list-inline-item">
-                  <div class="menubar">
-                    <a class="menu-hamburger" href="javascript:void();">
-                      <img src="{{ asset('assets/images/svg-icon/collapse.svg') }}" class="img-fluid menu-hamburger-collapse" alt="collapse">
-                      <img src="{{ asset('assets/images/svg-icon/close.svg') }}" class="img-fluid menu-hamburger-close" alt="close">
-                    </a>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Start Topbar -->
-      <div class="topbar">
-        <!-- Start row -->
-        <div class="row align-items-center">
-          <!-- Start col -->
-          <div class="col-md-12 align-self-center">
-            <div class="togglebar">
-              <ul class="list-inline mb-0">
-                <li class="list-inline-item">
-                  <div class="menubar">
-                    <a class="menu-hamburger" href="javascript:void();">
-                      <img src="{{ asset('assets/images/svg-icon/collapse.svg') }}" class="img-fluid menu-hamburger-collapse" alt="collapse">
-                      <img src="{{ asset('assets/images/svg-icon/close.svg') }}" class="img-fluid menu-hamburger-close" alt="close">
-                    </a>
-                  </div>
-                </li>
-                <li class="list-inline-item">
-                  <div class="searchbar">
-                    <form>
-                      <div class="input-group">
-                        <input type="search" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="button-addon2">
-                        <div class="input-group-append">
-                          <button class="btn" type="submit" id="button-addon2"><img src="{{ asset('assets/images/svg-icon/search.svg') }}" class="img-fluid" alt="search"></button>
-                        </div>
-                      </div>
-                    </form>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="infobar">
-              <ul class="list-inline mb-0">
-                <li class="list-inline-item">
-                  <div class="notifybar">
-                    <a href="javascript:void(0)" id="infobar-notifications-open" class="infobar-icon">
-                      <img src="{{ asset('assets/images/svg-icon/notifications.svg') }}" class="img-fluid" alt="notifications">
-                      <span class="live-icon"></span>
-                    </a>
-                  </div>
-                </li>
-                <li class="list-inline-item">
-                  <div class="settingbar">
-                    <a href="javascript:void(0)" id="infobar-settings-open" class="infobar-icon">
-                      <img src="{{ asset('assets/images/svg-icon/settings.svg') }}" class="img-fluid" alt="settings">
-                    </a>
-                  </div>
-                </li>
-                <li class="list-inline-item">
-                  <div class="languagebar">
-                    <div class="dropdown">
-                      <a class="dropdown-toggle" href="#" role="button" id="languagelink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="flag flag-icon-us flag-icon-squared"></i></a>
-                      <div class="dropdown-menu dropdown-menu-right" aria-labelledby="languagelink">
-                        <a class="dropdown-item" href="#"><i class="flag flag-icon-us flag-icon-squared"></i>English</a>
-                        <a class="dropdown-item" href="#"><i class="flag flag-icon-cn flag-icon-squared"></i>Chinese</a>
-                        <a class="dropdown-item" href="#"><i class="flag flag-icon-ru flag-icon-squared"></i>Russian</a>
-                        <a class="dropdown-item" href="#"><i class="flag flag-icon-es flag-icon-squared"></i>Spanish</a>
-                      </div>
+                  <div class="cart-item-qty">
+                    <div class="input-group">
+                      <input class="touchspin-cart" type="number" value="1">
                     </div>
                   </div>
-                </li>
-              </ul>
-            </div>
+                  <h5 class="cart-item-price">$374.90</h5>
+                </div>
+              </div>
+              <div class="list-item align-items-center"><img class="d-block rounded me-1" src="../../../app-assets/images/pages/eCommerce/7.png" alt="donuts" width="62">
+                <div class="list-item-body flex-grow-1"><i class="ficon cart-item-remove" data-feather="x"></i>
+                  <div class="media-heading">
+                    <h6 class="cart-item-title"><a class="text-body" href="app-ecommerce-details.html"> Google Home Mini</a></h6><small class="cart-item-by">By Google</small>
+                  </div>
+                  <div class="cart-item-qty">
+                    <div class="input-group">
+                      <input class="touchspin-cart" type="number" value="3">
+                    </div>
+                  </div>
+                  <h5 class="cart-item-price">$129.40</h5>
+                </div>
+              </div>
+              <div class="list-item align-items-center"><img class="d-block rounded me-1" src="../../../app-assets/images/pages/eCommerce/2.png" alt="donuts" width="62">
+                <div class="list-item-body flex-grow-1"><i class="ficon cart-item-remove" data-feather="x"></i>
+                  <div class="media-heading">
+                    <h6 class="cart-item-title"><a class="text-body" href="app-ecommerce-details.html"> iPhone 11 Pro</a></h6><small class="cart-item-by">By Apple</small>
+                  </div>
+                  <div class="cart-item-qty">
+                    <div class="input-group">
+                      <input class="touchspin-cart" type="number" value="2">
+                    </div>
+                  </div>
+                  <h5 class="cart-item-price">$699.00</h5>
+                </div>
+              </div>
+              <div class="list-item align-items-center"><img class="d-block rounded me-1" src="../../../app-assets/images/pages/eCommerce/3.png" alt="donuts" width="62">
+                <div class="list-item-body flex-grow-1"><i class="ficon cart-item-remove" data-feather="x"></i>
+                  <div class="media-heading">
+                    <h6 class="cart-item-title"><a class="text-body" href="app-ecommerce-details.html"> iMac Pro</a></h6><small class="cart-item-by">By Apple</small>
+                  </div>
+                  <div class="cart-item-qty">
+                    <div class="input-group">
+                      <input class="touchspin-cart" type="number" value="1">
+                    </div>
+                  </div>
+                  <h5 class="cart-item-price">$4,999.00</h5>
+                </div>
+              </div>
+              <div class="list-item align-items-center"><img class="d-block rounded me-1" src="../../../app-assets/images/pages/eCommerce/5.png" alt="donuts" width="62">
+                <div class="list-item-body flex-grow-1"><i class="ficon cart-item-remove" data-feather="x"></i>
+                  <div class="media-heading">
+                    <h6 class="cart-item-title"><a class="text-body" href="app-ecommerce-details.html"> MacBook Pro</a></h6><small class="cart-item-by">By Apple</small>
+                  </div>
+                  <div class="cart-item-qty">
+                    <div class="input-group">
+                      <input class="touchspin-cart" type="number" value="1">
+                    </div>
+                  </div>
+                  <h5 class="cart-item-price">$2,999.00</h5>
+                </div>
+              </div>
+            </li>
+            <li class="dropdown-menu-footer">
+              <div class="d-flex justify-content-between mb-1">
+                <h6 class="fw-bolder mb-0">Total:</h6>
+                <h6 class="text-primary fw-bolder mb-0">$10,999.00</h6>
+              </div><a class="btn btn-primary w-100" href="app-ecommerce-checkout.html">Checkout</a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown dropdown-notification me-25"><a class="nav-link" href="#" data-bs-toggle="dropdown"><i class="ficon" data-feather="bell"></i><span class="badge rounded-pill bg-danger badge-up">5</span></a>
+          <ul class="dropdown-menu dropdown-menu-media dropdown-menu-end">
+            <li class="dropdown-menu-header">
+              <div class="dropdown-header d-flex">
+                <h4 class="notification-title mb-0 me-auto">Notifications</h4>
+                <div class="badge rounded-pill badge-light-primary">6 New</div>
+              </div>
+            </li>
+            <li class="scrollable-container media-list"><a class="d-flex" href="#">
+                <div class="list-item d-flex align-items-start">
+                  <div class="me-1">
+                    <div class="avatar"><img src="../../../app-assets/images/portrait/small/avatar-s-15.jpg" alt="avatar" width="32" height="32"></div>
+                  </div>
+                  <div class="list-item-body flex-grow-1">
+                    <p class="media-heading"><span class="fw-bolder">Congratulation Sam 🎉</span>winner!</p><small class="notification-text"> Won the monthly best seller badge.</small>
+                  </div>
+                </div>
+              </a><a class="d-flex" href="#">
+                <div class="list-item d-flex align-items-start">
+                  <div class="me-1">
+                    <div class="avatar"><img src="../../../app-assets/images/portrait/small/avatar-s-3.jpg" alt="avatar" width="32" height="32"></div>
+                  </div>
+                  <div class="list-item-body flex-grow-1">
+                    <p class="media-heading"><span class="fw-bolder">New message</span>&nbsp;received</p><small class="notification-text"> You have 10 unread messages</small>
+                  </div>
+                </div>
+              </a><a class="d-flex" href="#">
+                <div class="list-item d-flex align-items-start">
+                  <div class="me-1">
+                    <div class="avatar bg-light-danger">
+                      <div class="avatar-content">MD</div>
+                    </div>
+                  </div>
+                  <div class="list-item-body flex-grow-1">
+                    <p class="media-heading"><span class="fw-bolder">Revised Order 👋</span>&nbsp;checkout</p><small class="notification-text"> MD Inc. order updated</small>
+                  </div>
+                </div>
+              </a>
+              <div class="list-item d-flex align-items-center">
+                <h6 class="fw-bolder me-auto mb-0">System Notifications</h6>
+                <div class="form-check form-check-primary form-switch">
+                  <input class="form-check-input" id="systemNotification" type="checkbox" checked="">
+                  <label class="form-check-label" for="systemNotification"></label>
+                </div>
+              </div><a class="d-flex" href="#">
+                <div class="list-item d-flex align-items-start">
+                  <div class="me-1">
+                    <div class="avatar bg-light-danger">
+                      <div class="avatar-content"><i class="avatar-icon" data-feather="x"></i></div>
+                    </div>
+                  </div>
+                  <div class="list-item-body flex-grow-1">
+                    <p class="media-heading"><span class="fw-bolder">Server down</span>&nbsp;registered</p><small class="notification-text"> USA Server is down due to high CPU usage</small>
+                  </div>
+                </div>
+              </a><a class="d-flex" href="#">
+                <div class="list-item d-flex align-items-start">
+                  <div class="me-1">
+                    <div class="avatar bg-light-success">
+                      <div class="avatar-content"><i class="avatar-icon" data-feather="check"></i></div>
+                    </div>
+                  </div>
+                  <div class="list-item-body flex-grow-1">
+                    <p class="media-heading"><span class="fw-bolder">Sales report</span>&nbsp;generated</p><small class="notification-text"> Last month sales report generated</small>
+                  </div>
+                </div>
+              </a><a class="d-flex" href="#">
+                <div class="list-item d-flex align-items-start">
+                  <div class="me-1">
+                    <div class="avatar bg-light-warning">
+                      <div class="avatar-content"><i class="avatar-icon" data-feather="alert-triangle"></i></div>
+                    </div>
+                  </div>
+                  <div class="list-item-body flex-grow-1">
+                    <p class="media-heading"><span class="fw-bolder">High memory</span>&nbsp;usage</p><small class="notification-text"> BLR Server using high memory</small>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li class="dropdown-menu-footer"><a class="btn btn-primary w-100" href="#">Read all notifications</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown dropdown-user"><a class="nav-link dropdown-toggle dropdown-user-link" id="dropdown-user" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <div class="user-nav d-sm-flex d-none"><span class="user-name fw-bolder">John Doe</span><span class="user-status">Admin</span></div><span class="avatar"><img class="round" src="../../../app-assets/images/portrait/small/avatar-s-11.jpg" alt="avatar" height="40" width="40"><span class="avatar-status-online"></span></span>
+          </a>
+          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdown-user"><a class="dropdown-item" href="page-profile.html"><i class="me-50" data-feather="user"></i> Profile</a><a class="dropdown-item" href="app-email.html"><i class="me-50" data-feather="mail"></i> Inbox</a><a class="dropdown-item" href="app-todo.html"><i class="me-50" data-feather="check-square"></i> Task</a><a class="dropdown-item" href="app-chat.html"><i class="me-50" data-feather="message-square"></i> Chats</a>
+            <div class="dropdown-divider"></div><a class="dropdown-item" href="page-account-settings-account.html"><i class="me-50" data-feather="settings"></i> Settings</a><a class="dropdown-item" href="page-pricing.html"><i class="me-50" data-feather="credit-card"></i> Pricing</a><a class="dropdown-item" href="page-faq.html"><i class="me-50" data-feather="help-circle"></i> FAQ</a>
+            <form action="/auth/logout" method="post">
+              @csrf
+              <button type="submit" class="dropdown-item"><i data-feather="power"></i> Logout</a>
+            </form>
           </div>
-          <!-- End col -->
-        </div>
-        <!-- End row -->
-      </div>
-      <!-- End Topbar -->
-      <!-- Start Breadcrumbbar -->
-      @yield('container')
-      <!-- End Contentbar -->
-      <!-- Start Footerbar -->
-      <div class="footerbar">
-        <footer class="footer">
-          <p class="mb-0">© 2020 Theta - All Rights Reserved.</p>
-        </footer>
-      </div>
-      <!-- End Footerbar -->
+        </li>
+      </ul>
     </div>
-    <!-- End Rightbar -->
+  </nav>
+  <ul class="main-search-list-defaultlist d-none">
+    <li class="d-flex align-items-center"><a href="#">
+        <h6 class="section-label mt-75 mb-0">Files</h6>
+      </a></li>
+    <li class="auto-suggestion"><a class="d-flex align-items-center justify-content-between w-100" href="app-file-manager.html">
+        <div class="d-flex">
+          <div class="me-75"><img src="../../../app-assets/images/icons/xls.png" alt="png" height="32"></div>
+          <div class="search-data">
+            <p class="search-data-title mb-0">Two new item submitted</p><small class="text-muted">Marketing Manager</small>
+          </div>
+        </div><small class="search-data-size me-50 text-muted">&apos;17kb</small>
+      </a></li>
+    <li class="auto-suggestion"><a class="d-flex align-items-center justify-content-between w-100" href="app-file-manager.html">
+        <div class="d-flex">
+          <div class="me-75"><img src="../../../app-assets/images/icons/jpg.png" alt="png" height="32"></div>
+          <div class="search-data">
+            <p class="search-data-title mb-0">52 JPG file Generated</p><small class="text-muted">FontEnd Developer</small>
+          </div>
+        </div><small class="search-data-size me-50 text-muted">&apos;11kb</small>
+      </a></li>
+    <li class="auto-suggestion"><a class="d-flex align-items-center justify-content-between w-100" href="app-file-manager.html">
+        <div class="d-flex">
+          <div class="me-75"><img src="../../../app-assets/images/icons/pdf.png" alt="png" height="32"></div>
+          <div class="search-data">
+            <p class="search-data-title mb-0">25 PDF File Uploaded</p><small class="text-muted">Digital Marketing Manager</small>
+          </div>
+        </div><small class="search-data-size me-50 text-muted">&apos;150kb</small>
+      </a></li>
+    <li class="auto-suggestion"><a class="d-flex align-items-center justify-content-between w-100" href="app-file-manager.html">
+        <div class="d-flex">
+          <div class="me-75"><img src="../../../app-assets/images/icons/doc.png" alt="png" height="32"></div>
+          <div class="search-data">
+            <p class="search-data-title mb-0">Anna_Strong.doc</p><small class="text-muted">Web Designer</small>
+          </div>
+        </div><small class="search-data-size me-50 text-muted">&apos;256kb</small>
+      </a></li>
+    <li class="d-flex align-items-center"><a href="#">
+        <h6 class="section-label mt-75 mb-0">Members</h6>
+      </a></li>
+    <li class="auto-suggestion"><a class="d-flex align-items-center justify-content-between py-50 w-100" href="app-user-view-account.html">
+        <div class="d-flex align-items-center">
+          <div class="avatar me-75"><img src="../../../app-assets/images/portrait/small/avatar-s-8.jpg" alt="png" height="32"></div>
+          <div class="search-data">
+            <p class="search-data-title mb-0">John Doe</p><small class="text-muted">UI designer</small>
+          </div>
+        </div>
+      </a></li>
+    <li class="auto-suggestion"><a class="d-flex align-items-center justify-content-between py-50 w-100" href="app-user-view-account.html">
+        <div class="d-flex align-items-center">
+          <div class="avatar me-75"><img src="../../../app-assets/images/portrait/small/avatar-s-1.jpg" alt="png" height="32"></div>
+          <div class="search-data">
+            <p class="search-data-title mb-0">Michal Clark</p><small class="text-muted">FontEnd Developer</small>
+          </div>
+        </div>
+      </a></li>
+    <li class="auto-suggestion"><a class="d-flex align-items-center justify-content-between py-50 w-100" href="app-user-view-account.html">
+        <div class="d-flex align-items-center">
+          <div class="avatar me-75"><img src="../../../app-assets/images/portrait/small/avatar-s-14.jpg" alt="png" height="32"></div>
+          <div class="search-data">
+            <p class="search-data-title mb-0">Milena Gibson</p><small class="text-muted">Digital Marketing Manager</small>
+          </div>
+        </div>
+      </a></li>
+    <li class="auto-suggestion"><a class="d-flex align-items-center justify-content-between py-50 w-100" href="app-user-view-account.html">
+        <div class="d-flex align-items-center">
+          <div class="avatar me-75"><img src="../../../app-assets/images/portrait/small/avatar-s-6.jpg" alt="png" height="32"></div>
+          <div class="search-data">
+            <p class="search-data-title mb-0">Anna Strong</p><small class="text-muted">Web Designer</small>
+          </div>
+        </div>
+      </a></li>
+  </ul>
+  <ul class="main-search-list-defaultlist-other-list d-none">
+    <li class="auto-suggestion justify-content-between"><a class="d-flex align-items-center justify-content-between w-100 py-50">
+        <div class="d-flex justify-content-start"><span class="me-75" data-feather="alert-circle"></span><span>No results found.</span></div>
+      </a></li>
+  </ul>
+  <!-- END: Header-->
+
+
+  <!-- BEGIN: Main Menu-->
+  <div class="main-menu menu-fixed menu-light menu-accordion menu-shadow" data-scroll-to-active="true">
+    <div class="navbar-header">
+      <ul class="nav navbar-nav flex-row">
+        <li class="nav-item me-auto"><a class="navbar-brand" href="../../../html/ltr/vertical-menu-template/index.html"><span class="brand-logo">
+              <svg viewbox="0 0 139 95" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="24">
+                <defs>
+                  <lineargradient id="linearGradient-1" x1="100%" y1="10.5120544%" x2="50%" y2="89.4879456%">
+                    <stop stop-color="#000000" offset="0%"></stop>
+                    <stop stop-color="#FFFFFF" offset="100%"></stop>
+                  </lineargradient>
+                  <lineargradient id="linearGradient-2" x1="64.0437835%" y1="46.3276743%" x2="37.373316%" y2="100%">
+                    <stop stop-color="#EEEEEE" stop-opacity="0" offset="0%"></stop>
+                    <stop stop-color="#FFFFFF" offset="100%"></stop>
+                  </lineargradient>
+                </defs>
+                <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                  <g id="Artboard" transform="translate(-400.000000, -178.000000)">
+                    <g id="Group" transform="translate(400.000000, 178.000000)">
+                      <path class="text-primary" id="Path" d="M-5.68434189e-14,2.84217094e-14 L39.1816085,2.84217094e-14 L69.3453773,32.2519224 L101.428699,2.84217094e-14 L138.784583,2.84217094e-14 L138.784199,29.8015838 C137.958931,37.3510206 135.784352,42.5567762 132.260463,45.4188507 C128.736573,48.2809251 112.33867,64.5239941 83.0667527,94.1480575 L56.2750821,94.1480575 L6.71554594,44.4188507 C2.46876683,39.9813776 0.345377275,35.1089553 0.345377275,29.8015838 C0.345377275,24.4942122 0.230251516,14.560351 -5.68434189e-14,2.84217094e-14 Z" style="fill:currentColor"></path>
+                      <path id="Path1" d="M69.3453773,32.2519224 L101.428699,1.42108547e-14 L138.784583,1.42108547e-14 L138.784199,29.8015838 C137.958931,37.3510206 135.784352,42.5567762 132.260463,45.4188507 C128.736573,48.2809251 112.33867,64.5239941 83.0667527,94.1480575 L56.2750821,94.1480575 L32.8435758,70.5039241 L69.3453773,32.2519224 Z" fill="url(#linearGradient-1)" opacity="0.2"></path>
+                      <polygon id="Path-2" fill="#000000" opacity="0.049999997" points="69.3922914 32.4202615 32.8435758 70.5039241 54.0490008 16.1851325"></polygon>
+                      <polygon id="Path-21" fill="#000000" opacity="0.099999994" points="69.3922914 32.4202615 32.8435758 70.5039241 58.3683556 20.7402338"></polygon>
+                      <polygon id="Path-3" fill="url(#linearGradient-2)" opacity="0.099999994" points="101.428699 0 83.0667527 94.1480575 130.378721 47.0740288"></polygon>
+                    </g>
+                  </g>
+                </g>
+              </svg></span>
+            <h2 class="brand-text">Vuexy</h2>
+          </a></li>
+        <li class="nav-item nav-toggle"><a class="nav-link modern-nav-toggle pe-0" data-bs-toggle="collapse"><i class="d-block d-xl-none text-primary toggle-icon font-medium-4" data-feather="x"></i><i class="d-none d-xl-block collapse-toggle-icon font-medium-4  text-primary" data-feather="disc" data-ticon="disc"></i></a></li>
+      </ul>
+    </div>
+    <div class="shadow-bottom"></div>
+    <div class="main-menu-content">
+      <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
+        <li class="{{ Request::is('main/dashboard') ? 'active' : 'nav-item' }}">
+          <a class="d-flex align-items-center" href="/main/dashboard"><i data-feather="home"></i><span class="menu-title text-truncate" data-i18n="Dashboard">Dashboard</span></a>
+        </li>
+        <li class=" navigation-header"><span data-i18n="Apps &amp; Pages">Apps &amp; Pages</span><i data-feather="more-horizontal"></i>
+        </li>
+        <li class="{{ Request::is('main/blog') ? 'active' : 'nav-item' }}">
+          <a class="d-flex align-items-center" href="/main/blog">
+            <i data-feather='cast'></i><span class="menu-title text-truncate" data-i18n="Blog">Blog</span></a>
+        </li>
+      </ul>
+    </div>
   </div>
-  <!-- End Containerbar -->
-  <!-- Start js -->
-  <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
-  <script src="{{ asset('assets/js/popper.min.js') }}"></script>
-  <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
-  <script src="{{ asset('assets/js/modernizr.min.js') }}"></script>
-  <script src="{{ asset('assets/js/detect.js') }}"></script>
-  <script src="{{ asset('assets/js/jquery.slimscroll.js') }}"></script>
-  <script src="{{ asset('assets/js/vertical-menu.js') }}"></script>
-  <!-- Switchery js -->
-  <script src="{{ asset('assets/plugins/switchery/switchery.min.js') }}"></script>
-  @stack('js-datatables')
-  <!-- Core js -->
-  <script src="{{ asset('assets/js/core.js') }}"></script>
-  <!-- End js -->
+  <!-- END: Main Menu-->
+
+  @yield('container')
+
+
+  <!-- BEGIN: Customizer-->
+  <div class="customizer d-none d-md-block"><a class="customizer-toggle d-flex align-items-center justify-content-center" href="#"><i class="spinner" data-feather="settings"></i></a>
+    <div class="customizer-content">
+      <!-- Customizer header -->
+      <div class="customizer-header px-2 pt-1 pb-0 position-relative">
+        <h4 class="mb-0">Theme Customizer</h4>
+        <p class="m-0">Customize & Preview in Real Time</p>
+
+        <a class="customizer-close" href="#"><i data-feather="x"></i></a>
+      </div>
+
+      <hr />
+
+      <!-- Styling & Text Direction -->
+      <div class="customizer-styling-direction px-2">
+        <p class="fw-bold">Skin</p>
+        <div class="d-flex">
+          <div class="form-check me-1">
+            <input type="radio" id="skinlight" name="skinradio" class="form-check-input layout-name" checked data-layout="" />
+            <label class="form-check-label" for="skinlight">Light</label>
+          </div>
+          <div class="form-check me-1">
+            <input type="radio" id="skinbordered" name="skinradio" class="form-check-input layout-name" data-layout="bordered-layout" />
+            <label class="form-check-label" for="skinbordered">Bordered</label>
+          </div>
+          <div class="form-check me-1">
+            <input type="radio" id="skindark" name="skinradio" class="form-check-input layout-name" data-layout="dark-layout" />
+            <label class="form-check-label" for="skindark">Dark</label>
+          </div>
+          <div class="form-check">
+            <input type="radio" id="skinsemidark" name="skinradio" class="form-check-input layout-name" data-layout="semi-dark-layout" />
+            <label class="form-check-label" for="skinsemidark">Semi Dark</label>
+          </div>
+        </div>
+      </div>
+
+      <hr />
+
+      <!-- Menu -->
+      <div class="customizer-menu px-2">
+        <div id="customizer-menu-collapsible" class="d-flex">
+          <p class="fw-bold me-auto m-0">Menu Collapsed</p>
+          <div class="form-check form-check-primary form-switch">
+            <input type="checkbox" class="form-check-input" id="collapse-sidebar-switch" />
+            <label class="form-check-label" for="collapse-sidebar-switch"></label>
+          </div>
+        </div>
+      </div>
+      <hr />
+
+      <!-- Layout Width -->
+      <div class="customizer-footer px-2">
+        <p class="fw-bold">Layout Width</p>
+        <div class="d-flex">
+          <div class="form-check me-1">
+            <input type="radio" id="layout-width-full" name="layoutWidth" class="form-check-input" checked />
+            <label class="form-check-label" for="layout-width-full">Full Width</label>
+          </div>
+          <div class="form-check me-1">
+            <input type="radio" id="layout-width-boxed" name="layoutWidth" class="form-check-input" />
+            <label class="form-check-label" for="layout-width-boxed">Boxed</label>
+          </div>
+        </div>
+      </div>
+      <hr />
+
+      <!-- Navbar -->
+      <div class="customizer-navbar px-2">
+        <div id="customizer-navbar-colors">
+          <p class="fw-bold">Navbar Color</p>
+          <ul class="list-inline unstyled-list">
+            <li class="color-box bg-white border selected" data-navbar-default=""></li>
+            <li class="color-box bg-primary" data-navbar-color="bg-primary"></li>
+            <li class="color-box bg-secondary" data-navbar-color="bg-secondary"></li>
+            <li class="color-box bg-success" data-navbar-color="bg-success"></li>
+            <li class="color-box bg-danger" data-navbar-color="bg-danger"></li>
+            <li class="color-box bg-info" data-navbar-color="bg-info"></li>
+            <li class="color-box bg-warning" data-navbar-color="bg-warning"></li>
+            <li class="color-box bg-dark" data-navbar-color="bg-dark"></li>
+          </ul>
+        </div>
+
+        <p class="navbar-type-text fw-bold">Navbar Type</p>
+        <div class="d-flex">
+          <div class="form-check me-1">
+            <input type="radio" id="nav-type-floating" name="navType" class="form-check-input" checked />
+            <label class="form-check-label" for="nav-type-floating">Floating</label>
+          </div>
+          <div class="form-check me-1">
+            <input type="radio" id="nav-type-sticky" name="navType" class="form-check-input" />
+            <label class="form-check-label" for="nav-type-sticky">Sticky</label>
+          </div>
+          <div class="form-check me-1">
+            <input type="radio" id="nav-type-static" name="navType" class="form-check-input" />
+            <label class="form-check-label" for="nav-type-static">Static</label>
+          </div>
+          <div class="form-check">
+            <input type="radio" id="nav-type-hidden" name="navType" class="form-check-input" />
+            <label class="form-check-label" for="nav-type-hidden">Hidden</label>
+          </div>
+        </div>
+      </div>
+      <hr />
+
+      <!-- Footer -->
+      <div class="customizer-footer px-2">
+        <p class="fw-bold">Footer Type</p>
+        <div class="d-flex">
+          <div class="form-check me-1">
+            <input type="radio" id="footer-type-sticky" name="footerType" class="form-check-input" />
+            <label class="form-check-label" for="footer-type-sticky">Sticky</label>
+          </div>
+          <div class="form-check me-1">
+            <input type="radio" id="footer-type-static" name="footerType" class="form-check-input" checked />
+            <label class="form-check-label" for="footer-type-static">Static</label>
+          </div>
+          <div class="form-check me-1">
+            <input type="radio" id="footer-type-hidden" name="footerType" class="form-check-input" />
+            <label class="form-check-label" for="footer-type-hidden">Hidden</label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <!-- End: Customizer-->
+
+  </div>
+  <div class="sidenav-overlay"></div>
+  <div class="drag-target"></div>
+
+  <!-- BEGIN: Footer-->
+  <footer class="footer footer-static footer-light">
+    <p class="clearfix mb-0"><span class="float-md-start d-block d-md-inline-block mt-25">COPYRIGHT &copy; 2021<a class="ms-25" href="https://github.com/nurd0tid/SiPONPES" target="_blank">nurd0tid</a><span class="d-none d-sm-inline-block">, All rights Reserved</span></span><span class="float-md-end d-none d-md-block">Hand-crafted & Made with<i data-feather="heart"></i></span></p>
+  </footer>
+  <button class="btn btn-primary btn-icon scroll-top" type="button"><i data-feather="arrow-up"></i></button>
+  <!-- END: Footer-->
+
+
+  <!-- BEGIN: Vendor JS-->
+  <script src="{{ asset('app-assets/vendors/js/vendors.min.js') }}">
+  </script>
+  <!-- BEGIN Vendor JS-->
+
+  <!-- BEGIN: Page Vendor JS-->
+  <!-- END: Page Vendor JS-->
+
+  <!-- BEGIN: Theme JS-->
+  <script src="{{ asset('app-assets/js/core/app-menu.min.js') }}"></script>
+  <script src="{{ asset('app-assets/js/core/app.min.js') }}"></script>
+  <script src="{{ asset('app-assets/js/scripts/customizer.min.js') }}"></script>
+  <!-- END: Theme JS-->
+
+  <!-- BEGIN: Page JS-->
+  <!-- END: Page JS-->
+
+  <script>
+    $(window).on('load', function() {
+      if (feather) {
+        feather.replace({
+          width: 14,
+          height: 14
+        });
+      }
+    })
+  </script>
 </body>
+<!-- END: Body-->
 
 </html>

@@ -136,12 +136,7 @@ License: You must have a valid license purchased only from themeforest(the above
                   <div class="mb-1">
                     <label class="form-label" for="register-password">Password Confirmation</label>
                     <div class="input-group input-group-merge form-password-toggle">
-                      <input class="form-control form-control-merge @error('password')is-invalid @enderror" id="password_confirmation" type="password" name="password_confirmation" placeholder="············" aria-describedby="register-password" tabindex="3" /><span class="input-group-text cursor-pointer"><i data-feather="eye"></i></span>
-                      @error('password')
-                      <div class="invalid-feedback">
-                        {{ $message }}
-                      </div>
-                      @enderror
+                      <input class="form-control form-control-merge " id="password_confirmation" type="password" name="password_confirmation" placeholder="············" aria-describedby="register-password" tabindex="3" /><span class="input-group-text cursor-pointer"><i data-feather="eye"></i></span>
                     </div>
                   </div>
                   <div class="mb-1">
