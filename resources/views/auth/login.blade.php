@@ -174,29 +174,6 @@
     });
   </script>
   @endif
-  <!--
-  @if(Session::has('success'))
-  <script>
-    $(function() {
-      toastr.success('👋 {{ Session::get("success") }}.', 'Success!', {
-        closeButton: true,
-        tapToDismiss: false,
-        progressBar: true
-      });
-    });
-  </script>
-  @endif
-  @if(Session::has('error'))
-  <script>
-    $(function() {
-      toastr.error('⚠️ {{ Session::get("error") }}.', 'Whoops!', {
-        closeButton: true,
-        tapToDismiss: false,
-        progressBar: true
-      });
-    });
-  </script>
-  @endif -->
 </body>
 <!-- END: Body-->
 

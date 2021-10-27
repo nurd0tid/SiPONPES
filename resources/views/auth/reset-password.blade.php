@@ -131,7 +131,7 @@
                   </div>
                   <button class="btn btn-primary w-100" type="submit" tabindex="3">Set New Password</button>
                 </form>
-                <p class="text-center mt-2"><a href="auth-login-cover.html"><i data-feather="chevron-left"></i> Back to login</a></p>
+                <p class="text-center mt-2"><a href="/auth/login"><i data-feather="chevron-left"></i> Back to login</a></p>
               </div>
             </div>
             <!-- /Reset password-->
