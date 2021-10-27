@@ -19,4 +19,4 @@ Route::get('/', function () {
 
 Route::get('/main/dashboard', function () {
     return view('admin.dashboard.index');
-})->middleware('auth');
+})->middleware(['verified']);
