@@ -97,6 +97,19 @@
                   <input type="hidden" name="token" value="{{ $request->route('token') }}">
                   <div class="mb-1">
                     <div class="d-flex justify-content-between">
+                      <label class="form-label" for="email">Email</label>
+                    </div>
+                    <div class="input-group input-group-merge form-password-toggle">
+                      <input class="form-control form-control-merge @error('email')is-invalid @enderror" id="email" type="email" name="email" placeholder="jhondoe@example.com" aria-describedby="email" autofocus="" tabindex="1" />
+                      @error('email')
+                      <div class="invalid-feedback">
+                        {{ $message }}
+                      </div>
+                      @enderror
+                    </div>
+                  </div>
+                  <div class="mb-1">
+                    <div class="d-flex justify-content-between">
                       <label class="form-label" for="reset-password-new">New Password</label>
                     </div>
                     <div class="input-group input-group-merge form-password-toggle">

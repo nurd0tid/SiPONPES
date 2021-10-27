@@ -163,6 +163,17 @@
       }
     })
   </script>
+  @if(session('status'))
+  <script>
+    $(function() {
+      toastr.success('👋 {{ session("status") }}.', 'Success!', {
+        closeButton: true,
+        tapToDismiss: false,
+        progressBar: true
+      });
+    });
+  </script>
+  @endif
   <!--
   @if(Session::has('success'))
   <script>
