@@ -15,10 +15,8 @@ class BlogController extends Controller
      */
     public function index()
     {
-        $blog = Blog::get();
         if (request()->ajax()) {
-            return DataTables::of($blog)
-                ->make(true);
+            return DataTables::of(Blog::query())->make(true);
         }
         return view('admin.blog.index');
     }

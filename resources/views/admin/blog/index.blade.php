@@ -1,5 +1,22 @@
 @extends('layouts.app')
 @section('container')
+@push('button-datatables')
+<style type="text/css" class="init">
+  div.dt-buttons {
+    position: relative;
+    float: left
+  }
+
+  button#btn_delete {
+    position: relative;
+    float: left
+  }
+
+  #tablePeserta tr {
+    text-align: center
+  }
+</style>
+@endpush
 @push('css-datatables')
 <link rel="stylesheet" href="{{ asset('assets/bundles/datatables/datatables.min.css') }}">
 <link rel="stylesheet" href="{{ asset('assets/bundles/datatables/DataTables-1.10.16/css/dataTables.bootstrap4.min.css') }}">
@@ -17,7 +34,7 @@
               <table class="table table-striped table-hover" id="table" style="width:100%;">
                 <thead>
                   <tr>
-                    <!-- <th>ID</th> -->
+                    <th>ID</th>
                     <th>Image</th>
                     <th>Title</th>
                     <!-- <th>Action</th> -->
@@ -41,23 +58,30 @@
 <script src="{{ asset('assets/bundles/datatables/export-tables/vfs_fonts.js') }}"></script>
 <script src="{{ asset('assets/bundles/datatables/export-tables/buttons.print.min.js') }}"></script>
 <script src="{{ asset('assets/js/page/datatables.js') }}"></script>
-<!-- <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> -->
-<!-- <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script> -->
 @endpush
 @push('serverside')
 <script>
   $(document).ready(function() {
-    isi()
-  })
-
-  function isi() {
     $('#table').DataTable({
-      serverside: true,
-      responsive: true,
+      processing: true,
+      serverSide: true,
+      dom: 'Blfrtip',
+      select: true,
+      lengthMenu: [
+        [5, 10, 25, 100, -1],
+        [5, 10, 25, 100, 'Show All']
+      ],
       ajax: {
-        url: "{{ Request::is('blog') }}"
+        url: "{{ Route('blog.index') }}"
       },
       columns: [{
+          "data": null,
+          "sortable": false,
+          render: function(data, type, row, meta) {
+            return meta.row + meta.settings._iDisplayStart + 1;
+          }
+        },
+        {
           data: 'image',
           name: 'image'
         },
@@ -67,7 +91,7 @@
         },
       ]
     })
-  }
+  })
 </script>
 @endpush
 <!-- END: Content-->
