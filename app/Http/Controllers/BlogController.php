@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Blog;
 use Illuminate\Http\Request;
+use Yajra\Datatables\Datatables;
 
 class BlogController extends Controller
 {
@@ -14,7 +15,14 @@ class BlogController extends Controller
      */
     public function index()
     {
-        return view('admin.blog.index');
+        return view('admin.blog.index', [
+            'blog' => Blog::get(),
+        ]);
+    }
+
+    public function ajax()
+    {
+        return Datatables::of(Blog::query())->make(true);
     }
 
     /**
