@@ -14,24 +14,15 @@
           </div>
           <div class="card-body">
             <div class="table-responsive">
-              <table class="table table-striped table-hover" id="tableExport" style="width:100%;">
+              <table class="table table-striped table-hover" id="table" style="width:100%;">
                 <thead>
                   <tr>
-                    <th>ID</th>
+                    <!-- <th>ID</th> -->
                     <th>Image</th>
                     <th>Title</th>
                     <!-- <th>Action</th> -->
                   </tr>
                 </thead>
-                <tbody>
-                  @foreach($blog as $blog)
-                  <tr>
-                    <td>{{ $loop->iteration }}</td>
-                    <td>{{ $blog->image }}</td>
-                    <td>{{ $blog->title }}</td>
-                  </tr>
-                  @endforeach
-                </tbody>
               </table>
             </div>
           </div>
@@ -50,6 +41,34 @@
 <script src="{{ asset('assets/bundles/datatables/export-tables/vfs_fonts.js') }}"></script>
 <script src="{{ asset('assets/bundles/datatables/export-tables/buttons.print.min.js') }}"></script>
 <script src="{{ asset('assets/js/page/datatables.js') }}"></script>
+<!-- <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> -->
+<!-- <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script> -->
+@endpush
+@push('serverside')
+<script>
+  $(document).ready(function() {
+    isi()
+  })
+
+  function isi() {
+    $('#table').DataTable({
+      serverside: true,
+      responsive: true,
+      ajax: {
+        url: "{{ Request::is('blog') }}"
+      },
+      columns: [{
+          data: 'image',
+          name: 'image'
+        },
+        {
+          data: 'title',
+          name: 'title'
+        },
+      ]
+    })
+  }
+</script>
 @endpush
 <!-- END: Content-->
 @endsection()

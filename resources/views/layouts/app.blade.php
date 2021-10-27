@@ -162,9 +162,12 @@
                 Settings
               </a>
               <div class="dropdown-divider"></div>
-              <a href="auth-login.html" class="dropdown-item has-icon text-danger"> <i class="fas fa-sign-out-alt"></i>
-                Logout
-              </a>
+              <form action="/auth/logout" class="has-icon" method="post">
+                @csrf
+                <button type="submit" class="dropdown-item text-danger"> <i class="fas fa-sign-out-alt"></i>
+                  Logout
+                </button>
+              </form>
             </div>
           </li>
         </ul>
@@ -299,6 +302,7 @@
   <script src="{{ asset('assets/js/scripts.js') }}"></script>
   <!-- Custom JS File -->
   <script src="{{ asset('assets/js/custom.js') }}"></script>
+  @stack('serverside')
 </body>
 
 
