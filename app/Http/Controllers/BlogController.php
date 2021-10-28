@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Blog;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use DataTables;
 use \Cviebrock\EloquentSluggable\Services\SlugService;
+use Illuminate\Support\Str;
 
 class BlogController extends Controller
 {
@@ -29,7 +31,9 @@ class BlogController extends Controller
      */
     public function create()
     {
-        return view('admin.blog.create');
+        return view('admin.blog.create', [
+            'categories' => Category::all()
+        ]);
     }
 
     /**
@@ -42,8 +46,18 @@ class BlogController extends Controller
     {
         $validateData = $request->validate([
             'title' => 'required|max:255',
-            'slug'  => 'required|unique:blog',
+            'slug'  => 'required|unique:blogs',
+            'category_id'  => 'required',
+            'status'  => 'required',
+            'tags'  => 'required',
+            'content'  => 'required',
         ]);
+
+        $validateData['user_id'] =  auth()->user()->id;
+        $validateData['excerpt'] = Str::limit(strip_tags($request->content), 150, '...');
+
+        Blog::create($validateData);
+        return redirect('/main/blog')->with('success', 'New Article has been added!');
     }
 
     /**

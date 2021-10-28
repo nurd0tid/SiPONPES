@@ -17,9 +17,12 @@
   }
 </style>
 @endpush
+@push('css-toast')
+    <link rel="stylesheet" href="{{ asset('assets/bundles/izitoast/css/iziToast.min.css') }}">
+@endpush
 @push('css-datatables')
-<link rel="stylesheet" href="{{ asset('assets/bundles/datatables/datatables.min.css') }}">
-<link rel="stylesheet" href="{{ asset('assets/bundles/datatables/DataTables-1.10.16/css/dataTables.bootstrap4.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/bundles/datatables/datatables.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/bundles/datatables/DataTables-1.10.16/css/dataTables.bootstrap4.min.css') }}">
 @endpush
 <section class="section">
   <div class="section-body">
@@ -35,8 +38,9 @@
                 <thead>
                   <tr>
                     <th>ID</th>
-                    <th>Image</th>
                     <th>Title</th>
+                    <th>Slug</th>
+                    <th>Excerpt</th>
                     <!-- <th>Action</th> -->
                   </tr>
                 </thead>
@@ -82,17 +86,38 @@
           }
         },
         {
-          data: 'image',
-          name: 'image'
-        },
-        {
           data: 'title',
           name: 'title'
+        },
+        {
+          data: 'slug',
+          name: 'slug'
+        },
+        {
+          data: 'excerpt',
+          name: 'excerpt'
         },
       ]
     })
   })
 </script>
+@endpush
+@push('js-toast')
+  <script src="{{ asset('assets/bundles/izitoast/js/iziToast.min.js') }}"></script>
+  <script src="{{ asset('assets/js/page/toastr.js') }}"></script>
+@endpush
+@push('popup-toast')
+  @if(session()->has('success'))
+  <script>
+      $(function() {
+      iziToast.success({
+        title: '👋',
+        message: '{{ session("success") }}.',
+        position: 'topRight'
+      });      
+    });
+  </script> 
+  @endif  
 @endpush
 <!-- END: Content-->
 @endsection()

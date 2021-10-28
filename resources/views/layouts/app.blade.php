@@ -10,6 +10,7 @@
     <!-- General CSS Files -->
     <link rel="stylesheet" href="{{ asset('assets/css/app.min.css') }}">
     @stack('css-summernote')
+    @stack('css-toast')
     <!-- Template CSS -->
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/components.css') }}">
@@ -336,6 +337,7 @@
     <!-- General JS Scripts -->
     <script src="{{ asset('assets/js/app.min.js') }}"></script>
     <!-- JS Libraies -->
+    @stack('js-toast')
     @stack('js-summernote')
     <!-- Page Specific JS File -->
     @stack('js-datatables')
@@ -345,6 +347,7 @@
     <!-- Custom JS File -->
     <script src="{{ asset('assets/js/custom.js') }}"></script>
     @stack('serverside')
+    @stack('popup-toast')
 </body>
 
 
