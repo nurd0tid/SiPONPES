@@ -11,7 +11,7 @@
       <div class="col-12">
         <div class="card">
           <div class="card-header">
-            <h4>Full Summernote</h4>
+            <h4>Add Article</h4>
           </div>
           <form action="/main/blog" method="post">
             @csrf

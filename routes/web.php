@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,3 +25,4 @@ Route::get('/main/dashboard', function () {
 
 Route::get('/main/blog/checkSlug', [BlogController::class, 'checkSlug']);
 Route::resource('/main/blog', BlogController::class)->middleware(['verified', 'auth']);
+Route::resource('/main/category', CategoryController::class)->middleware(['verified', 'auth']);

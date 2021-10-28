@@ -209,14 +209,18 @@
                           <a href="/main/dashboard" class="nav-link"><i
                                   data-feather="monitor"></i><span>Dashboard</span></a>
                       </li>
-                      <li class="{{ Request::is('main/blog') ? 'active' : 'dropdown' }}">
+                      <li class="{{ Request::is('main*') ? 'active' : 'dropdown' }}">
                           <a href="#" class="menu-toggle nav-link has-dropdown"><i
                                   data-feather="cast"></i><span>Blog</span></a>
                           <ul class="dropdown-menu">
                               <li class="{{ Request::is('main/blog') ? 'active' : '' }}"><a class="nav-link"
                                       href="/main/blog">Blog</a></li>
-                              <li class="{{ Request::is('main/blog/add') ? 'active' : '' }}"><a
+                              <li class="{{ Request::is('main/blog/create') ? 'active' : '' }}"><a
                                       class="nav-link" href="/main/blog/create">Add Article</a></li>
+                              <li class="{{ Request::is('main/category') ? 'active' : '' }}"><a
+                                      class="nav-link" href="/main/category">List Category</a></li>
+                              <li class="{{ Request::is('main/category/create') ? 'active' : '' }}"><a
+                                      class="nav-link" href="/main/category/create">New Category</a></li>
                           </ul>
                       </li>
                   </ul>

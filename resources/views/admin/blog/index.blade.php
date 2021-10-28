@@ -37,7 +37,7 @@
               <table class="table table-striped table-hover" id="table" style="width:100%;">
                 <thead>
                   <tr>
-                    <th>ID</th>
+                    <th>#</th>
                     <th>Title</th>
                     <th>Slug</th>
                     <th>Excerpt</th>
@@ -69,6 +69,7 @@
     $('#table').DataTable({
       processing: true,
       serverSide: true,
+      stateSave: true,
       dom: 'Blfrtip',
       select: true,
       lengthMenu: [
@@ -86,16 +87,13 @@
           }
         },
         {
-          data: 'title',
-          name: 'title'
+          data: 'title'
         },
         {
-          data: 'slug',
-          name: 'slug'
+          data: 'slug'
         },
         {
-          data: 'excerpt',
-          name: 'excerpt'
+          data: 'excerpt'
         },
       ]
     })
