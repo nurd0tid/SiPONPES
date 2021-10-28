@@ -9,6 +9,7 @@ use Cviebrock\EloquentSluggable\Sluggable;
 class Blog extends Model
 {
     use HasFactory, Sluggable;
+    protected $guraded = ['id'];
 
     public function sluggable(): array
     {
@@ -17,6 +18,16 @@ class Blog extends Model
                 'source' => 'title'
             ]
         ];
+    }
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 
     public function getRouteKeyName()
