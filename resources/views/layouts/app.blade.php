@@ -214,7 +214,7 @@
                               <li class="{{ Request::is('main/blog') ? 'active' : '' }}"><a class="nav-link"
                                       href="/main/blog">Blog</a></li>
                               <li class="{{ Request::is('main/blog/add') ? 'active' : '' }}"><a
-                                      class="nav-link" href="/main/blog/add">Add Article</a></li>
+                                      class="nav-link" href="/main/blog/create">Add Article</a></li>
                           </ul>
                       </li>
                   </ul>
