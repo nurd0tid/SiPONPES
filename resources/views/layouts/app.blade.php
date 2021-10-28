@@ -9,6 +9,7 @@
     <title>Otika - Admin Dashboard Template</title>
     <!-- General CSS Files -->
     <link rel="stylesheet" href="{{ asset('assets/css/app.min.css') }}">
+    @stack('css-summernote')
     <!-- Template CSS -->
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/components.css') }}">
@@ -335,8 +336,10 @@
     <!-- General JS Scripts -->
     <script src="{{ asset('assets/js/app.min.js') }}"></script>
     <!-- JS Libraies -->
+    @stack('js-summernote')
     <!-- Page Specific JS File -->
     @stack('js-datatables')
+    @stack('js-page')
     <!-- Template JS File -->
     <script src="{{ asset('assets/js/scripts.js') }}"></script>
     <!-- Custom JS File -->

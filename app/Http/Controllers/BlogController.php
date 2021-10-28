@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Blog;
 use Illuminate\Http\Request;
 use DataTables;
+use \Cviebrock\EloquentSluggable\Services\SlugService;
 
 class BlogController extends Controller
 {
@@ -28,7 +29,7 @@ class BlogController extends Controller
      */
     public function create()
     {
-        return view('admin.blog.add');
+        return view('admin.blog.create');
     }
 
     /**
@@ -85,5 +86,13 @@ class BlogController extends Controller
     public function destroy(Blog $blog)
     {
         //
+    }
+
+    public function checkSlug(Request $request)
+    {
+        $slug = SlugService::createSlug(Blog::class, 'slug', $request->title);
+        return response()->json([
+            'slug' => $slug
+        ]);
     }
 }

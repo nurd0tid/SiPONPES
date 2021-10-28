@@ -22,4 +22,5 @@ Route::get('/main/dashboard', function () {
     return view('admin.dashboard.index');
 })->middleware(['verified']);
 
+Route::get('/main/blog/checkSlug', [BlogController::class, 'checkSlug']);
 Route::resource('/main/blog', BlogController::class)->middleware(['verified']);
