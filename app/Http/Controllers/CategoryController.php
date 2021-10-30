@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Blog;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -13,7 +15,9 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        return view('admin.category.index');
+        return view('admin.category.index', [
+            'categories' => Category::all()
+        ]);
     }
 
     /**
@@ -54,9 +58,9 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($category)
     {
-        //
+        return view('admin.category.edit');
     }
 
     /**
@@ -77,8 +81,9 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Category $category)
     {
-        //
+        Category::destroy($category->id);
+        return redirect('/main/category')->with('success', 'Article has been deleted!');
     }
 }

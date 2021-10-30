@@ -12,7 +12,7 @@
     float: left
   }
 
-  #tablePeserta tr {
+  #table tr {
     text-align: center
   }
 </style>
@@ -36,12 +36,13 @@
             <div class="table-responsive">
               <table class="table table-striped table-hover" id="table" style="width:100%;">
                 <thead>
-                  <tr>
-                    <th>#</th>
-                    <th>Title</th>
-                    <th>Slug</th>
-                    <th>Excerpt</th>
-                    <!-- <th>Action</th> -->
+                  <tr style="text-align: center;">
+                    <th style="width: 5px">#</th>
+                    <th style="width: 80px;">Title</th>
+                    <th style="width: 120px;">Slug</th>
+                    <th style="width: 380px;">Excerpt</th>
+                    <th>Status</th>
+                    <th>Action</th>
                   </tr>
                 </thead>
               </table>
@@ -69,7 +70,7 @@
     $('#table').DataTable({
       processing: true,
       serverSide: true,
-      stateSave: true,
+      // stateSave: true,
       dom: 'Blfrtip',
       select: true,
       lengthMenu: [
@@ -94,6 +95,24 @@
         },
         {
           data: 'excerpt'
+        },
+        {
+            render: function(data, type, row) {
+                var html = ""
+                if (row.status == "Publish") {
+                    html = '<span class="badge badge-success">Publish</span>'
+                } else {
+                    html = '<span class="badge badge-warning">Draft</span>'
+                }
+                return html;
+            }
+        },
+        {
+            render: function(data, type, row) {
+                var html = "<a class='btn btn-primary btn-sm' href='/main/blog/" + row.slug + "'><i class='fas fa-edit'></i></a>"
+                html += "<a class='btn btn-info btn-sm ml-2' href='/main/blog/" + row.slug + "'><i class='fas fa-eye'></i></a>"
+                return html
+            }
         },
       ]
     })

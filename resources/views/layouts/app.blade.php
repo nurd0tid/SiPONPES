@@ -209,7 +209,7 @@
                           <a href="/main/dashboard" class="nav-link"><i
                                   data-feather="monitor"></i><span>Dashboard</span></a>
                       </li>
-                      <li class="{{ Request::is('main*') ? 'active' : 'dropdown' }}">
+                      <li class="{{ Request::is('main/blog*') || Request::is('main/category*') ? 'active' : 'dropdown' }}">
                           <a href="#" class="menu-toggle nav-link has-dropdown"><i
                                   data-feather="cast"></i><span>Blog</span></a>
                           <ul class="dropdown-menu">
