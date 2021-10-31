@@ -121,7 +121,6 @@
 @endpush
 @push('js-toast')
   <script src="{{ asset('assets/bundles/izitoast/js/iziToast.min.js') }}"></script>
-  <script src="{{ asset('assets/js/page/toastr.js') }}"></script>
 @endpush
 @push('popup-toast')
   @if(session()->has('success'))

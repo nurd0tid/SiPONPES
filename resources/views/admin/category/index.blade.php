@@ -4,6 +4,9 @@
   <link rel="stylesheet" href="{{ asset('assets/bundles/datatables/datatables.min.css') }}">
   <link rel="stylesheet" href="{{ asset('assets/bundles/datatables/DataTables-1.10.16/css/dataTables.bootstrap4.min.css') }}">
 @endpush
+@push('css-toast')
+    <link rel="stylesheet" href="{{ asset('assets/bundles/izitoast/css/iziToast.min.css') }}">
+@endpush
 <section class="section">
   <div class="section-body">
     <div class="row">
@@ -32,7 +35,7 @@
                         <td>{{ $category->name }}</td>
                         <td>{{ $category->slug }}</td>
                         <td>
-                          <form action="/main/category/{{ $category->id }}" method="post">
+                          <form action="/main/category/{{ $category->slug }}" method="post">
                               @method('delete')
                               @csrf
                               <a href="/main/category/{{ $category->slug }}" class="btn btn-sm btn-info"><i class="fas fa-eye"></i></a>
@@ -51,10 +54,35 @@
     </div>
   </div>
 </section>
-
 @push('js-datatables')
   <script src="{{ asset('assets/bundles/datatables/datatables.min.js') }}"></script>
   <script src="{{ asset('assets/bundles/datatables/DataTables-1.10.16/js/dataTables.bootstrap4.min.js') }}"></script>
   <script src="{{ asset('assets/js/page/datatables.js') }}"></script>
 @endpush  
+@push('js-toast')
+  <script src="{{ asset('assets/bundles/izitoast/js/iziToast.min.js') }}"></script>
+@endpush
+@push('popup-toast')  
+  @if (session()->has('success'))
+  <script>
+      $(function() {
+      iziToast.success({
+        title: '👋',
+        message: '{{ session("success") }}.',
+        position: 'topRight'
+      });      
+    });
+  </script>     
+  @elseif (session()->has('warning'))
+  <script>
+      $(function() {
+      iziToast.warning({
+        title: 'Whoops!',
+        message: '{{ session("warning") }}.',
+        position: 'topRight'
+      });      
+    });
+  </script>     
+  @endif
+@endpush
 @endsection
