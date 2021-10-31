@@ -38,7 +38,6 @@
                           <form action="/main/category/{{ $category->slug }}" method="post">
                               @method('delete')
                               @csrf
-                              <a href="/main/category/{{ $category->slug }}" class="btn btn-sm btn-info"><i class="fas fa-eye"></i></a>
                               <a href="/main/category/{{ $category->slug }}/edit" class="btn btn-sm btn-primary ml-1"><i class="fas fa-edit"></i></a>                              
                               <button class="btn btn-sm btn-danger ml-1" onclick="return confirm('Are you sure?')"><i class="fas fa-trash"></i></button>
                           </form>

@@ -68,7 +68,7 @@ class CategoryController extends Controller
     public function edit(Category $category)
     {
         return view('admin.category.edit', [
-            'categories' => Category::all()
+            'categories' => $category
         ]);
     }
 
@@ -79,9 +79,16 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Category $category)
     {
-        //
+        $validateData = $request->validate([
+            'name' => 'required|max:255',
+            'slug'  => 'required|unique:categories',
+        ]);
+
+        Category::where('id', $category->id)
+            ->update($validateData);
+        return redirect('/main/category')->with('success', 'New Category has been updated!');
     }
 
     /**
