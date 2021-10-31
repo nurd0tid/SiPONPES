@@ -58,9 +58,11 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($category)
+    public function edit(Category $category)
     {
-        return view('admin.category.edit');
+        return view('admin.category.edit', [
+            'categories' => Category::all()
+        ]);
     }
 
     /**
