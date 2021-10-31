@@ -67,7 +67,7 @@
               <div class="form-group col-md-6">
                 <label>File Browser</label>
                 <div class="custom-file">
-                  <input type="file" class="custom-file-input  @error('image')is-invalid @enderror" id="image" name="image">
+                  <input type="file" class="custom-file-input  @error('image')is-invalid @enderror" id="image" name="image" onchange="previewImage()">
                   <label class="custom-file-label" for="image">Choose file</label>
                   @error('image')
                   <div class="invalid-feedback mt-2">
@@ -75,6 +75,7 @@
                   </div>
                   @enderror  
                 </div>
+                <img class="img-preview img-fluid mt-2" src="{{ asset('storage/article-images/noimage.jpg') }}" style="width: 520px; height: 280px;">
               </div>
               <div class="form-group col-md-6">
                 <label>Content Article</label>
@@ -114,6 +115,18 @@
          .then(response => response.json())
           .then(data => slug.value =  data.slug)
       });
+
+      function previewImage() {
+        const image = document.querySelector('#image');
+        const imgPreview = document.querySelector('.img-preview');
+
+        imgPreview.style.display = 'block';
+        const oFReader = new FileReader();
+        oFReader.readAsDataURL(image.files[0]);
+        oFReader.onload = function (oFREvent) {
+          imgPreview.src = oFREvent.target.result;
+        }
+      }
     </script>
 @endpush
 @endsection
