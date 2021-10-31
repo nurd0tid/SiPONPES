@@ -13,44 +13,40 @@
           <div class="card-header">
             <h4>Add Article</h4>
           </div>
-          <form action="/main/blog" method="post">
+          <form action="/main/blog" method="post" enctype="multipart/form-data">
             @csrf
           <div class="card-body">
-            <div class="form-group row mb-4">
-              <label class="col-form-label text-md-right col-12 col-md-3 col-lg-1">Title</label>
-              <div class="col-sm-12 col-md-7">
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label>Title</label>
                 <input type="text" class="form-control  @error('title')is-invalid @enderror" id="title" name="title" 
                 value="{{ old('title') }}" autofocus>
                   @error('title')
                   <div class="invalid-feedback">
                     {{ $message }}
                   </div>
-                  @enderror                
+                  @enderror 
               </div>
-            </div>
-            <div class="form-group row mb-4">
-              <label class="col-form-label text-md-right col-12 col-md-3 col-lg-1">Slug</label>
-              <div class="col-sm-12 col-md-7">
+              <div class="form-group col-md-6">
+                <label>Slug</label>
                 <input type="text" class="form-control @error('slug')is-invalid @enderror" id="slug" value="{{ old('slug') }}" name="slug" readonly>
                   @error('slug')
                   <div class="invalid-feedback">
                     {{ $message }}
                   </div>
-                  @enderror                  
+                  @enderror   
               </div>
             </div>
-            <div class="form-group row mb-4">
-              <label class="col-form-label text-md-right col-12 col-md-3 col-lg-1">Status</label>
-              <div class="col-sm-12 col-md-7">
+            <div class="form-row">
+              <div class="form-group col-md-4">
+                <label>Status</label>
                 <select class="form-control selectric" name="status">
                   <option value="Publish">Publish</option>
                   <option value="Draf">Draft</option>
                 </select>
               </div>
-            </div>
-            <div class="form-group row mb-4">
-              <label class="col-form-label text-md-right col-12 col-md-3 col-lg-1">Category</label>
-              <div class="col-sm-12 col-md-7">
+              <div class="form-group col-md-4">
+                <label>Category</label>
                 <select class="form-control selectric" name="category_id">
                   @foreach ($categories as $category)
                     @if (old('category_id') == $category->id)
@@ -60,26 +56,35 @@
                       @endif
 
                     @endforeach
-                </select>
+                </select>  
+              </div>
+              <div class="form-group col-md-4">
+                <label>Tags</label>
+                  <input type="text" value="{{ old('tags') }}" class="form-control inputtags" name="tags" placeholder="Jhon, Doe, More,">
               </div>
             </div>
-            <div class="form-group row mb-4">
-              <label class="col-form-label text-md-right col-12 col-md-3 col-lg-1">Tags</label>
-              <div class="col-sm-12 col-md-7">
-                <input type="text" value="{{ old('tags') }}" class="form-control inputtags" name="tags">
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label>File Browser</label>
+                <div class="custom-file">
+                  <input type="file" class="custom-file-input  @error('image')is-invalid @enderror" id="image" name="image">
+                  <label class="custom-file-label" for="image">Choose file</label>
+                  @error('image')
+                  <div class="invalid-feedback mt-2">
+                    {{ $message }}
+                  </div>
+                  @enderror  
+                </div>
               </div>
-            </div>
-            <div class="form-group row mb-4">
-              <label class="col-form-label text-md-right col-12 col-md-3 col-lg-1">Content</label>
-              <div class="col-sm-12 col-md-7">
+              <div class="form-group col-md-6">
+                <label>Content Article</label>
                 <textarea class="summernote" value="{{ old('content') }}" name="content"></textarea>
                 @error('content')
                  <p class="text-danger">{{ $message }}</p>
-                @enderror          
+                @enderror  
               </div>
             </div>
             <div class="form-group row mb-4">
-              <label class="col-form-label text-md-right col-12 col-md-3 col-lg-1"></label>
               <div class="col-sm-12 col-md-7">
                 <button type="submit" class="btn btn-primary">Create Article</button>
               </div>

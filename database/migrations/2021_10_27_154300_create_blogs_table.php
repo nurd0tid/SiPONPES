@@ -19,10 +19,10 @@ class CreateBlogsTable extends Migration
             $table->foreignId('user_id');
             $table->string('title');
             $table->string('slug')->unique();
-            $table->string('category');
-            $table->boolean('status')->default(false);
-            $table->string('image');
+            $table->enum('difficulty', ['Publish', 'Draft']);
+            $table->string('image')->nullable();
             $table->string('excerpt');
+            $table->string('tags');
             $table->text('content');
             $table->timestamps();
         });
