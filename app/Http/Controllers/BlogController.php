@@ -48,11 +48,15 @@ class BlogController extends Controller
             'title' => 'required|max:255',
             'slug'  => 'required|unique:blogs',
             'category_id'  => 'required',
-            'image'  => 'image|file|max:1024',
             'status'  => 'required',
+            'image'  => 'image|file|max:1024',
             'tags'  => 'required',
             'content'  => 'required',
         ]);
+
+        if ($request->file('image')) {
+            $validateData['image'] = $request->file('image')->store('article-images');
+        }
 
         $validateData['user_id'] =  auth()->user()->id;
         $validateData['excerpt'] = Str::limit(strip_tags($request->content), 150, '...');

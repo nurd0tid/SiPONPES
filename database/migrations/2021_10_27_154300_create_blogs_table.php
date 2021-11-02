@@ -19,7 +19,7 @@ class CreateBlogsTable extends Migration
             $table->foreignId('user_id');
             $table->string('title');
             $table->string('slug')->unique();
-            $table->enum('difficulty', ['Publish', 'Draft']);
+            $table->enum('status', ['Publish', 'Draft']);
             $table->string('image')->nullable();
             $table->string('excerpt');
             $table->string('tags');
