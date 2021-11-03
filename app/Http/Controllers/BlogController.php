@@ -18,9 +18,9 @@ class BlogController extends Controller
      */
     public function index()
     {
-        if (request()->ajax()) {
-            return DataTables::of(Blog::query())->make(true);
-        }
+        // if (request()->ajax()) {
+        //     return DataTables::of(Blog::query())->make(true);
+        // }
         return view('admin.blog.index');
     }
 
@@ -108,6 +108,18 @@ class BlogController extends Controller
     public function destroy(Blog $blog)
     {
         //
+    }
+
+    public function json()
+    {
+        $blog = Blog::all();
+
+        return DataTables::of($blog)
+            ->addColumn('action', function ($blog) {
+                return '<a href="/main/blog/' . $blog->slug . '/edit" class="btn btn-sm btn-info"><i class="fas fa-eye"></i></a>
+                <a href="/main/blog/' . $blog->slug . '/edit" class="btn btn-sm btn-primary"><i class="fas fa-edit"></i></a>';
+            })
+            ->make(true);
     }
 
     public function checkSlug(Request $request)

@@ -25,6 +25,7 @@ Route::get('/main/dashboard', function () {
 })->middleware(['verified']);
 
 Route::get('/main/blog/checkSlug', [BlogController::class, 'checkSlug']);
+Route::get('/blogJson', [BlogController::class, 'json'])->name('blogJson');
 Route::get('/main/category/checkSlug', [CategoryController::class, 'checkSlug']);
 Route::resource('/main/blog', BlogController::class)->middleware(['verified', 'auth']);
 Route::resource('/main/category', CategoryController::class)->middleware(['verified', 'auth']);

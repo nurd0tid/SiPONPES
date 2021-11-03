@@ -78,7 +78,7 @@
         [5, 10, 25, 100, 'Show All']
       ],
       ajax: {
-        url: "{{ Route('blog.index') }}"
+        url: "{{ Route('blogJson') }}"
       },
       columns: [{
           "data": null,
@@ -108,12 +108,10 @@
             }
         },
         {
-            render: function(data, type, row) {
-                var html = "<a class='btn btn-primary btn-sm' href='/main/blog/" + row.slug + "'><i class='fas fa-edit'></i></a>"
-                html += "<a class='btn btn-info btn-sm ml-2' href='/main/blog/" + row.slug + "'><i class='fas fa-eye'></i></a>"
-                return html
-            }
-        },
+          data: 'action',
+          orderable: false, 
+          searchable: false
+        }
       ]
     })
   })
