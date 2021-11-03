@@ -107,7 +107,8 @@ class BlogController extends Controller
      */
     public function destroy(Blog $blog)
     {
-        //
+        Blog::destroy($blog->id);
+        return redirect('/main/blog')->with('warning', 'Article has been deleted!');
     }
 
     public function json()
@@ -116,8 +117,14 @@ class BlogController extends Controller
 
         return DataTables::of($blog)
             ->addColumn('action', function ($blog) {
-                return '<a href="/main/blog/' . $blog->slug . '/edit" class="btn btn-sm btn-info"><i class="fas fa-eye"></i></a>
-                <a href="/main/blog/' . $blog->slug . '/edit" class="btn btn-sm btn-primary"><i class="fas fa-edit"></i></a>';
+                return '
+                <form action="/main/blog/' . $blog->slug . '" method="post">
+                    ' . csrf_field() . '
+                    ' . method_field("DELETE") . ' 
+                    <a href="/main/blog/' . $blog->slug . '" class="btn btn-sm btn-info"><i class="fas fa-eye"></i></a>
+                    <a href="/main/blog/' . $blog->slug . '/edit" class="btn btn-sm btn-primary"><i class="fas fa-edit"></i></a>                           
+                    <button class="btn btn-sm btn-danger" onclick="return confirm("Are you sure?")"><i class="fas fa-trash"></i></button>
+                </form>';
             })
             ->make(true);
     }
