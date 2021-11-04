@@ -30,7 +30,7 @@
       <div class="col-12">
         <div class="card">
           <div class="card-header">
-            <h4>Export Table</h4>
+            <h4>Article</h4>
           </div>
           <div class="card-body">
             <div class="table-responsive">
@@ -56,12 +56,6 @@
 @push('js-datatables')
 <script src="{{ asset('assets/bundles/datatables/datatables.min.js') }}"></script>
 <script src="{{ asset('assets/bundles/datatables/DataTables-1.10.16/js/dataTables.bootstrap4.min.js') }}"></script>
-<script src="{{ asset('assets/bundles/datatables/export-tables/dataTables.buttons.min.js') }}"></script>
-<script src="{{ asset('assets/bundles/datatables/export-tables/buttons.flash.min.js') }}"></script>
-<script src="{{ asset('assets/bundles/datatables/export-tables/jszip.min.js') }}"></script>
-<script src="{{ asset('assets/bundles/datatables/export-tables/pdfmake.min.js') }}"></script>
-<script src="{{ asset('assets/bundles/datatables/export-tables/vfs_fonts.js') }}"></script>
-<script src="{{ asset('assets/bundles/datatables/export-tables/buttons.print.min.js') }}"></script>
 <script src="{{ asset('assets/js/page/datatables.js') }}"></script>
 @endpush
 @push('serverside')
@@ -71,7 +65,7 @@
       processing: true,
       serverSide: true,
       // stateSave: true,
-      dom: 'Blfrtip',
+      // dom: 'Blfrtip',
       select: true,
       lengthMenu: [
         [5, 10, 25, 100, -1],
@@ -120,8 +114,8 @@
 @push('js-toast')
   <script src="{{ asset('assets/bundles/izitoast/js/iziToast.min.js') }}"></script>
 @endpush
-@push('popup-toast')
-  @if(session()->has('success'))
+@push('popup-toast')  
+  @if (session()->has('success'))
   <script>
       $(function() {
       iziToast.success({
@@ -130,8 +124,18 @@
         position: 'topRight'
       });      
     });
-  </script> 
-  @endif  
+  </script>     
+  @elseif (session()->has('warning'))
+  <script>
+      $(function() {
+      iziToast.warning({
+        title: 'Whoops!',
+        message: '{{ session("warning") }}.',
+        position: 'topRight'
+      });      
+    });
+  </script>     
+  @endif
 @endpush
 <!-- END: Content-->
 @endsection()

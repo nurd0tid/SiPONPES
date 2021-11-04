@@ -88,7 +88,7 @@ class CategoryController extends Controller
 
         Category::where('id', $category->id)
             ->update($validateData);
-        return redirect('/main/category')->with('success', 'New Category has been updated!');
+        return redirect('/main/category')->with('success', 'Category has been updated!');
     }
 
     /**

@@ -20,7 +20,7 @@ class CreateBlogsTable extends Migration
             $table->string('title');
             $table->string('slug')->unique();
             $table->enum('status', ['Publish', 'Draft']);
-            $table->string('image')->nullable();
+            $table->string('image');
             $table->string('excerpt');
             $table->string('tags');
             $table->text('content');

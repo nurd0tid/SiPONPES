@@ -7,6 +7,7 @@ use App\Models\Category;
 use Illuminate\Http\Request;
 use DataTables;
 use \Cviebrock\EloquentSluggable\Services\SlugService;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 class BlogController extends Controller
@@ -49,7 +50,7 @@ class BlogController extends Controller
             'slug'  => 'required|unique:blogs',
             'category_id'  => 'required',
             'status'  => 'required',
-            'image'  => 'image|file|max:1024',
+            'image'  => 'image|file|mimes:jpg,jpeg,png|max:1024',
             'tags'  => 'required',
             'content'  => 'required',
         ]);
@@ -57,9 +58,9 @@ class BlogController extends Controller
         if ($request->file('image')) {
             $validateData['image'] = $request->file('image')->store('article-images');
         }
-
         $validateData['user_id'] =  auth()->user()->id;
         $validateData['excerpt'] = Str::limit(strip_tags($request->content), 150, '...');
+
 
         Blog::create($validateData);
         return redirect('/main/blog')->with('success', 'New Article has been added!');
@@ -84,7 +85,10 @@ class BlogController extends Controller
      */
     public function edit(Blog $blog)
     {
-        //
+        return view('admin.blog.edit', [
+            'blog' => $blog,
+            'categories' => Category::all()
+        ]);
     }
 
     /**
@@ -96,7 +100,34 @@ class BlogController extends Controller
      */
     public function update(Request $request, Blog $blog)
     {
-        //
+        $rules = [
+            'title' => 'required|max:255',
+            'category_id'  => 'required',
+            'status'  => 'required',
+            'image'  => 'image|file|mimes:jpg,jpeg,png|max:1024',
+            'tags'  => 'required',
+            'content'  => 'required',
+        ];
+
+        if ($request->slug != $blog->slug) {
+            $rules['slug'] = 'required|unique:blogs';
+        }
+
+        $validateData = $request->validate($rules);
+
+        if ($request->file('image')) {
+            if ($request->oldImage) {
+                Storage::delete($request->oldImage);
+            }
+            $validateData['image'] = $request->file('image')->store('article-images');
+        }
+
+        $validateData['user_id'] =  auth()->user()->id;
+        $validateData['excerpt'] = Str::limit(strip_tags($request->content), 150, '...');
+
+        Blog::where('id', $blog->id)
+            ->update($validateData);
+        return redirect('/main/blog')->with('success', 'Artcile has been updated!');
     }
 
     /**
@@ -107,6 +138,9 @@ class BlogController extends Controller
      */
     public function destroy(Blog $blog)
     {
+        if ($blog->image) {
+            Storage::delete($blog->image);
+        }
         Blog::destroy($blog->id);
         return redirect('/main/blog')->with('warning', 'Article has been deleted!');
     }
