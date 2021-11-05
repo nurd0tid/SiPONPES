@@ -11,7 +11,7 @@
         <form method="POST" action="/main/sms">
           @csrf
           <div class="card-header">
-            <h4>SMS Gateway</h4>
+            <h4>API Key</h4>
           </div>
           <div class="card-body">
             <div class="form-group">
@@ -34,7 +34,7 @@
             </div>
           </div>
           <div class="card-footer text-right">
-            <button class="btn btn-primary">Create Key</button>
+            <button class="btn btn-primary">Setup Credentials</button>
           </div>
         </form>
       </div>
