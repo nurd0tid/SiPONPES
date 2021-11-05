@@ -30,5 +30,7 @@ Route::get('/blogJson', [BlogController::class, 'json'])->name('blogJson')->midd
 Route::get('/main/category/checkSlug', [CategoryController::class, 'checkSlug'])->middleware(['verified', 'auth']);;
 Route::resource('/main/blog', BlogController::class)->middleware(['verified', 'auth']);
 Route::resource('/main/category', CategoryController::class)->middleware(['verified', 'auth']);
-Route::get('/main/sms', [SmsController::class, 'index']);
-Route::post('/main/sendSMS', [SmsController::class, 'send']);
+Route::resource('/main/sms', SmsController::class)->middleware(['verified', 'auth']);
+Route::post('/main/sendSMS', [SmsController::class, 'send'])->name('sendSMS')->middleware(['verified', 'auth']);
+// Route::get('/main/sms', [SmsController::class, 'index']);
+// Route::get('/main/sms/', [SmsController::class, 'index']);

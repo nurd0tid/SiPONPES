@@ -209,7 +209,7 @@
                           <a href="/main/dashboard" class="nav-link"><i
                                   data-feather="monitor"></i><span>Dashboard</span></a>
                       </li>
-                      <li class="{{ Request::is('main/blog*') || Request::is('main/category*') ? 'active' : 'dropdown' }}">
+                      <li class="{{ Request::is('main/blog*') || Request::is('main/category*') ? 'active' : '' }}">
                           <a href="#" class="menu-toggle nav-link has-dropdown"><i
                                   data-feather="cast"></i><span>Blog</span></a>
                           <ul class="dropdown-menu">
@@ -223,8 +223,14 @@
                                       class="nav-link" href="/main/category/create">New Category</a></li>
                           </ul>
                       </li>
-                      <li class="{{ Request::is('main/sms') ? 'active' : ''}}">
-                        <a href="/main/sms" class="nav-link"><i data-feather="message-square"></i>SMS Gateway</a>
+                      <li class="{{ Request::is('main/sms*') ? 'active' : ''}}">
+                        <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="message-square"></i>SMS Sender</a>
+                            <ul class="dropdown-menu">
+                              <li class="{{ Request::is('main/sms') ? 'active' : '' }}"><a class="nav-link"
+                                      href="/main/sms">SMS Gateway</a></li>
+                              <li class="{{ Request::is('main/sms/create') ? 'active' : '' }}"><a
+                                      class="nav-link" href="/main/sms/create">API Key</a></li>
+                            </ul>
                       </li>
                   </ul>
               </aside>

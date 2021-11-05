@@ -13,6 +13,8 @@
           <div class="card-header">
             <h4>SMS Gateway</h4>
           </div>
+          <input type="hidden" name="api_key" value="{{ $sms[0]->api_key }}">
+          <input type="hidden" name="api_secret" value="{{ $sms[0]->api_secret }}">
           <div class="card-body">
             <div class="form-group">
               <label>Recipent Number</label>
