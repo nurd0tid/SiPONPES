@@ -223,6 +223,9 @@
                                       class="nav-link" href="/main/category/create">New Category</a></li>
                           </ul>
                       </li>
+                      <li class="{{ Request::is('main/sms') ? 'active' : ''}}">
+                        <a href="/main/sms" class="nav-link"><i data-feather="message-square"></i>SMS Gateway</a>
+                      </li>
                   </ul>
               </aside>
           </div>

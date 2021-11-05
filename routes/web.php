@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\SmsController;
 use App\Models\Category;
 
 /*
@@ -29,3 +30,5 @@ Route::get('/blogJson', [BlogController::class, 'json'])->name('blogJson')->midd
 Route::get('/main/category/checkSlug', [CategoryController::class, 'checkSlug'])->middleware(['verified', 'auth']);;
 Route::resource('/main/blog', BlogController::class)->middleware(['verified', 'auth']);
 Route::resource('/main/category', CategoryController::class)->middleware(['verified', 'auth']);
+Route::get('/main/sms', [SmsController::class, 'index']);
+Route::post('/main/sendSMS', [SmsController::class, 'send']);
