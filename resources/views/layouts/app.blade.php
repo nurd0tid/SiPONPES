@@ -223,11 +223,13 @@
                                       class="nav-link" href="/main/category/create">New Category</a></li>
                           </ul>
                       </li>
-                      <li class="{{ Request::is('main/sms*') ? 'active' : ''}}">
-                        <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="message-square"></i>SMS Sender</a>
+                      <li class="{{ Request::is('main/sms*') || Request::is('main/whatsapp*') ? 'active' : ''}}">
+                        <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="message-square"></i>Message</a>
                             <ul class="dropdown-menu">
                               <li class="{{ Request::is('main/sms') ? 'active' : '' }}"><a class="nav-link"
                                       href="/main/sms">SMS Gateway</a></li>
+                              <li class="{{ Request::is('main/whatsapp') ? 'active' : '' }}"><a class="nav-link"
+                                      href="/main/whatsapp">Whatsapp Gateway</a></li>
                               <li class="{{ Request::is('main/sms/create') ? 'active' : '' }}"><a
                                       class="nav-link" href="/main/sms/create">API Key</a></li>
                             </ul>

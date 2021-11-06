@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\SmsController;
+use App\Http\Controllers\WhatsappController;
 use App\Models\Category;
 
 /*
@@ -32,5 +33,5 @@ Route::resource('/main/blog', BlogController::class)->middleware(['verified', 'a
 Route::resource('/main/category', CategoryController::class)->middleware(['verified', 'auth']);
 Route::resource('/main/sms', SmsController::class)->middleware(['verified', 'auth']);
 Route::post('/main/sendSMS', [SmsController::class, 'send'])->name('sendSMS')->middleware(['verified', 'auth']);
-// Route::get('/main/sms', [SmsController::class, 'index']);
-// Route::get('/main/sms/', [SmsController::class, 'index']);
+Route::get('/main/whatsapp', [WhatsappController::class, 'index'])->middleware(['verified', 'auth']);
+Route::post('/main/sendWhatsapp', [WhatsappController::class, 'send'])->middleware(['verified', 'auth']);
