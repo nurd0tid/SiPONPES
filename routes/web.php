@@ -22,16 +22,24 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// Main List Apps
 Route::get('/main/dashboard', function () {
-    return view('admin.dashboard.index');
+    return view('admin.main.dashboard.index');
 })->middleware(['verified']);
 
-Route::get('/main/blog/checkSlug', [BlogController::class, 'checkSlug'])->middleware(['verified', 'auth']);;
+// Extra List Apps
+
+// Extra Blog
+Route::resource('/extra/blog', BlogController::class)->middleware(['verified', 'auth']);
 Route::get('/blogJson', [BlogController::class, 'json'])->name('blogJson')->middleware(['verified', 'auth']);;
-Route::get('/main/category/checkSlug', [CategoryController::class, 'checkSlug'])->middleware(['verified', 'auth']);;
-Route::resource('/main/blog', BlogController::class)->middleware(['verified', 'auth']);
-Route::resource('/main/category', CategoryController::class)->middleware(['verified', 'auth']);
-Route::resource('/main/sms', SmsController::class)->middleware(['verified', 'auth']);
-Route::post('/main/sendSMS', [SmsController::class, 'send'])->name('sendSMS')->middleware(['verified', 'auth']);
-Route::get('/main/whatsapp', [WhatsappController::class, 'index'])->middleware(['verified', 'auth']);
-Route::post('/main/sendWhatsapp', [WhatsappController::class, 'send'])->middleware(['verified', 'auth']);
+Route::get('/extra/blog/checkSlug', [BlogController::class, 'checkSlug'])->middleware(['verified', 'auth']);;
+
+// Extra Category
+Route::resource('/extra/category', CategoryController::class)->middleware(['verified', 'auth']);
+Route::get('/extra/category/checkSlug', [CategoryController::class, 'checkSlug'])->middleware(['verified', 'auth']);;
+
+// Extra Gateway
+Route::resource('/extra/sms', SmsController::class)->middleware(['verified', 'auth']);
+Route::post('/extra/sendSMS', [SmsController::class, 'send'])->name('sendSMS')->middleware(['verified', 'auth']);
+Route::get('/extra/whatsapp', [WhatsappController::class, 'index'])->middleware(['verified', 'auth']);
+Route::post('/extra/sendWhatsapp', [WhatsappController::class, 'send'])->middleware(['verified', 'auth']);

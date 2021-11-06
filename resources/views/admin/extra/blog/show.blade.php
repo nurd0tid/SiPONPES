@@ -9,8 +9,8 @@
         </div>
       </div>
       <div class="article-details">
-        <div class="article-category"><a href="/main/blog">Back To All Article</a>
-          <div class="bullet"></div> <a href="/main/blog/{{ $blog->slug }}/edit">Edit Article</a>
+        <div class="article-category"><a href="/extra/blog">Back To All Article</a>
+          <div class="bullet"></div> <a href="/extra/blog/{{ $blog->slug }}/edit">Edit Article</a>
         </div>
         <div class="article-title">
           <h2><a href="#">{{ $blog->title }}</a></h2>

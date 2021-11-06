@@ -8,17 +8,17 @@
   <div class="row">
     <div class="col-12 col-md-6  col-lg-6">
       <div class="card">
-        <form method="POST" action="/main/sendSMS">
+        <form method="POST" action="/extra/sendWhatsapp">
           @csrf
           <div class="card-header">
-            <h4>SMS Gateway</h4>
+            <h4>Whatsapp Gateway</h4>
           </div>
           <input type="hidden" name="api_key" value="{{ $sms[0]->api_key }}">
           <input type="hidden" name="api_secret" value="{{ $sms[0]->api_secret }}">
           <div class="card-body">
             <div class="form-group">
               <label>Recipent Number</label>
-              <input type="text" name="to" class="form-control" value="6289xxxxxxxxx" readonly>
+              <input type="text" name="to" class="form-control" required>
             </div>
             <div class="form-group">
               <label>From</label>
@@ -55,6 +55,49 @@
               <i class="fab fa-github"></i> <a href="https://github.com/nurd0tid" class="badge badge-light">Github Me</a></span>
             </button>
         </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-12 col-md-12 col-lg-12">
+    <div class="card card-success">
+      <div class="card-header">
+        <h4>How To Use Whatsapp Gateway</h4>
+      </div>
+      <div class="card-body">
+        <h6>WhatsApp Qr Code</h6>
+        <div>
+          <div class="mt-2 mb-2 bg-whitesmoke">
+            <center><img src="{{ asset('assets/img/qr.png') }}" style="width: 150px; height: 150px;"/></center>
+          </div>
+        </div>
+          <p>Scan the QR code, <a href="https://web.whatsapp.com/send?phone=14157386170&text=Join%20buck%20slob">or click this link <i class="far fa-copy"></i></a> , and hit send on the pre-filled message.</p>
+
+          <p>Here we need to allow the public URL to access the dev platform or on our local in order to receive incoming webhooks for two-way messaging communication. For that, we will use ngrok. If you don't have ngrok, please visit the official website at <a href="https://ngrok.com">ngrok.com</a>, then proceed with registering and after being directed to the <a href="https://dashboard.ngrok.com/get-started/setup">dashboard page</a>, please download ngrok.</p>
+
+          <p>After successfully downloading ngrok, please install ngrok first with the steps as shown on the <a href="https://dashboard.ngrok.com/get-started/setup">setup & installation page.</a></p>
+
+          <h6>*Setup ngrok on windows:</h6>
+          <ol>
+            <li>Download ngrok</li>
+            <li>Unzip or double click on ngrok.zip</li>
+            <li>Run <b>ngrok.exe</b></li>
+            <li>Connect ngrok with your ngrok account with the <b>"ngrok authtoken tokenandaxxxxx"</b> command on <b>ngrok.exe</b>
+              authtoken can be found on the setup & installation page no. 2.</li>
+            <li>Start ngrok with the command <b>"ngrok http 8000"</b> or whatever port is running in your project. <i>For example if your laravel project is running on port 8090 (url: 127.0.0.1:8090)</i> then you have to run ngrok with the command ngrok http 8090.</li>
+          </ol>
+          <p>Webhook configuration. For webhook configuration, we need https URL "forwarding" which we can get in the previous step. Please copy the https "forwarding" URL and paste it in the inbound and status form as shown above then click save webhooks. If you fail (access denied) in the save process or when you click save webhooks, please try reloading the website page (Perhaps your login session has expired).</p>
+
+          <h6> Webhooks URL format : </h6>
+          <ol>
+            <li>Inbound Example: http://port.ngrok.io/webhooks/inbound</li>
+            <li>Status Example: http://port.ngrok.io/webhooks/status</li>
+          </ol>
+          <button type="button" class="btn btn-light btn-icon icon-left mt-3">
+            <i class="fab fa-github"></i> <a href="https://github.com/nexmo" class="badge badge-light">Github Nexmo</a></span>
+          </button>
+          <button type="button" class="btn btn-light btn-icon icon-left mt-3">
+            <i class="fab fa-github"></i> <a href="https://github.com/nurd0tid" class="badge badge-light">Github Me</a></span>
+          </button>
       </div>
     </div>
   </div>

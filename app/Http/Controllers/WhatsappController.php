@@ -9,7 +9,7 @@ class WhatsappController extends Controller
 {
     public function index()
     {
-        return view('admin.whatsapp.index', [
+        return view('admin.extra.whatsapp.index', [
             'sms' => Sms::all()
         ]);
     }
@@ -33,9 +33,9 @@ class WhatsappController extends Controller
             $client = new \GuzzleHttp\Client();
             $client->request('POST', $url, ["headers" => $headers, "json" => $params]);
 
-            return redirect('/main/whatsapp')->with('success', 'Whatsapp Gateway has been sending!');
+            return redirect('/extra/whatsapp')->with('success', 'Whatsapp Gateway has been sending!');
         } catch (\Exception $e) {
-            return redirect('/main/whatsapp')->with('error', 'Whatsapp Gateway not sent!');
+            return redirect('/extra/whatsapp')->with('error', 'Whatsapp Gateway not sent!');
         }
     }
 }

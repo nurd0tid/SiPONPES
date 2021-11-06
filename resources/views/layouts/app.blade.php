@@ -209,29 +209,155 @@
                           <a href="/main/dashboard" class="nav-link"><i
                                   data-feather="monitor"></i><span>Dashboard</span></a>
                       </li>
-                      <li class="{{ Request::is('main/blog*') || Request::is('main/category*') ? 'active' : '' }}">
+                      <li class="">
+                          <a href="#" class="menu-toggle nav-link has-dropdown"><i
+                                  data-feather="database"></i><span>Data Master</span></a>
+                          <ul class="dropdown-menu">
+                              <li class=""><a class="nav-link"
+                                      href="#">Data Identitas Sekolah</a></li>
+                              <li class=""><a
+                                      class="nav-link" href="#">Data Kurikulum</a></li>
+                              <li class=""><a
+                                      class="nav-link" href="#">Data Tahun Akademik</a></li>
+                              <li class=""><a
+                                      class="nav-link" href="#">Data Gedung</a></li>
+                              <li class=""><a
+                                      class="nav-link" href="#">Data Ruangan</a></li>
+                              <li class=""><a
+                                      class="nav-link" href="#">Data Golongan</a></li>
+                              <li class=""><a
+                                      class="nav-link" href="#">Data Jenis PTK</a></li>
+                              <li class=""><a
+                                      class="nav-link" href="#">Data Jurusan</a></li>
+                              <li class=""><a
+                                      class="nav-link" href="#">Data Kelas</a></li>
+                              <li class=""><a
+                                      class="nav-link" href="#">Data Status Kepegawain</a></li>
+                              <li class=""><a
+                                      class="nav-link" href="#">Data Pelanggaran Siswa</a></li>
+                              <li class=""><a
+                                      class="nav-link" href="#">Data Juara Lomba</a></li>
+                              <li class=""><a
+                                      class="nav-link" href="#">Data Tingkat Lomba</a></li>
+                          </ul>                                  
+                      </li>
+                      <li class="">
+                          <a href="#" class="menu-toggle nav-link has-dropdown"><i
+                                  data-feather="users"></i><span>Data User</span></a>
+                          <ul class="dropdown-menu">
+                              <li class=""><a class="nav-link"
+                                      href="#">Data Siswa</a></li>
+                              <li class=""><a
+                                      class="nav-link" href="#">Data Guru</a></li>
+                              <li class=""><a
+                                      class="nav-link" href="#">Data Kepala Sekolah</a></li>
+                              <li class=""><a
+                                      class="nav-link" href="#">Data Administrator</a></li>
+                          </ul>                                  
+                      </li>
+                      <li class="">
+                          <a href="#" class="menu-toggle nav-link has-dropdown"><i
+                                  data-feather="tag"></i><span>Data Akademik</span></a>
+                          <ul class="dropdown-menu">
+                              <li class=""><a class="nav-link"
+                                      href="#">Data Kelompok Mapel</a></li>
+                              <li class=""><a
+                                      class="nav-link" href="#">Data Mata Pelajaran</a></li>
+                              <li class=""><a
+                                      class="nav-link" href="#">Data Jawal Pelajaran</a></li>
+                              <li class=""><a
+                                      class="nav-link" href="#">Data Bahan dan Tugas</a></li>
+                              <li class=""><a
+                                      class="nav-link" href="#">Data Kompetensi Dasar</a></li>
+                              <li class=""><a
+                                      class="nav-link" href="#">Data Penilain Diri</a></li>
+                              <li class=""><a
+                                      class="nav-link" href="#">Data Rentan Nilai</a></li>
+                              <li class=""><a
+                                      class="nav-link" href="#">Data Penilain Teman</a></li>
+                          </ul>                                  
+                      </li>
+                      <li class="">
+                          <a href="#" class="menu-toggle nav-link has-dropdown"><i
+                                  data-feather="calendar"></i><span>Data Absensi</span></a>
+                          <ul class="dropdown-menu">
+                              <li class=""><a class="nav-link"
+                                      href="#">Absensi Guru</a></li>
+                              <li class=""><a
+                                      class="nav-link" href="#">Absensi Siswa</a></li>
+                              <li class=""><a
+                                      class="nav-link" href="#">Rekap Absensi Siswa</a></li>
+                          </ul>                                  
+                      </li>                                                                     
+                      <li class="">
+                          <a href="#" class="menu-toggle nav-link has-dropdown"><i
+                                  data-feather="file"></i><span>Laporan Nilai Siswa</span></a>
+                          <ul class="dropdown-menu">
+                              <li class=""><a class="nav-link"
+                                      href="#">Data Nilai UTS</a></li>
+                              <li class=""><a
+                                      class="nav-link" href="#">Cetak Rapot UTS</a></li>
+                              <li class=""><a
+                                      class="nav-link" href="#">Data Capaian Belajar</a></li>
+                              <li class=""><a
+                                      class="nav-link" href="#">Data Nilai Rapot</a></li>
+                              <li class=""><a
+                                      class="nav-link" href="#">Cetak Rapot</a></li>
+                          </ul>                                  
+                      </li>
+                      <li class="">
+                          <a href="#" class="nav-link"><i
+                                  data-feather="trello"></i><span>Journal KBM</span></a>
+                      </li>                                                                                           
+                      <li class="">
+                          <a href="#" class="nav-link"><i
+                                  data-feather="video-off"></i><span>Forum Diskusi</span></a>
+                      </li>                                                                                           
+                      <li class="">
+                          <a href="#" class="nav-link"><i
+                                  data-feather="video"></i><span>Forum Diskusi Online</span></a>
+                      </li>                                                                                           
+                      <li class="">
+                          <a href="#" class="nav-link"><i
+                                  data-feather="help-circle"></i><span>Quiz/Ujian Online</span></a>
+                      </li>
+                      <li class="">
+                          <a href="#" class="menu-toggle nav-link has-dropdown"><i
+                                  data-feather="award"></i><span>Catatan Siswa</span></a>
+                          <ul class="dropdown-menu">
+                              <li class=""><a class="nav-link"
+                                      href="#">Prestasi Siswa</a></li>
+                              <li class=""><a
+                                      class="nav-link" href="#">Ekstrakulikuler Siswa</a></li>
+                              <li class=""><a
+                                      class="nav-link" href="#">Siswa Berprestasi</a></li>
+                          </ul>                                  
+                      </li>
+                      
+                      <li class="menu-header">Extra Apps</li>                                                                                                                
+                      <li class="{{ Request::is('extra/blog*') || Request::is('extra/category*') ? 'active' : '' }}">
                           <a href="#" class="menu-toggle nav-link has-dropdown"><i
                                   data-feather="cast"></i><span>Blog</span></a>
                           <ul class="dropdown-menu">
-                              <li class="{{ Request::is('main/blog') ? 'active' : '' }}"><a class="nav-link"
-                                      href="/main/blog">Blog</a></li>
-                              <li class="{{ Request::is('main/blog/create') ? 'active' : '' }}"><a
-                                      class="nav-link" href="/main/blog/create">Add Article</a></li>
-                              <li class="{{ Request::is('main/category') ? 'active' : '' }}"><a
-                                      class="nav-link" href="/main/category">List Category</a></li>
-                              <li class="{{ Request::is('main/category/create') ? 'active' : '' }}"><a
-                                      class="nav-link" href="/main/category/create">New Category</a></li>
+                              <li class="{{ Request::is('extra/blog') ? 'active' : '' }}"><a class="nav-link"
+                                      href="/extra/blog">Blog</a></li>
+                              <li class="{{ Request::is('extra/blog/create') ? 'active' : '' }}"><a
+                                      class="nav-link" href="/extra/blog/create">Add Article</a></li>
+                              <li class="{{ Request::is('extra/category') ? 'active' : '' }}"><a
+                                      class="nav-link" href="/extra/category">List Category</a></li>
+                              <li class="{{ Request::is('extra/category/create') ? 'active' : '' }}"><a
+                                      class="nav-link" href="/extra/category/create">New Category</a></li>
                           </ul>
                       </li>
-                      <li class="{{ Request::is('main/sms*') || Request::is('main/whatsapp*') ? 'active' : ''}}">
+                      <li class="{{ Request::is('extra/sms*') || Request::is('extra/whatsapp*') ? 'active' : ''}}">
                         <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="message-square"></i>Message</a>
                             <ul class="dropdown-menu">
-                              <li class="{{ Request::is('main/sms') ? 'active' : '' }}"><a class="nav-link"
-                                      href="/main/sms">SMS Gateway</a></li>
-                              <li class="{{ Request::is('main/whatsapp') ? 'active' : '' }}"><a class="nav-link"
-                                      href="/main/whatsapp">Whatsapp Gateway</a></li>
-                              <li class="{{ Request::is('main/sms/create') ? 'active' : '' }}"><a
-                                      class="nav-link" href="/main/sms/create">API Key</a></li>
+                              <li class="{{ Request::is('extra/sms') ? 'active' : '' }}"><a class="nav-link"
+                                      href="/extra/sms">SMS Gateway</a></li>
+                              <li class="{{ Request::is('extra/whatsapp') ? 'active' : '' }}"><a class="nav-link"
+                                      href="/extra/whatsapp">Whatsapp Gateway</a></li>
+                              <li class="{{ Request::is('extra/sms/create') ? 'active' : '' }}"><a
+                                      class="nav-link" href="/extra/sms/create">API Key</a></li>
                             </ul>
                       </li>
                   </ul>

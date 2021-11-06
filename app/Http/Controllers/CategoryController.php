@@ -16,7 +16,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        return view('admin.category.index', [
+        return view('admin.extra.category.index', [
             'categories' => Category::all()
         ]);
     }
@@ -28,7 +28,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('admin.category.create');
+        return view('admin.extra.category.create');
     }
 
     /**
@@ -45,7 +45,7 @@ class CategoryController extends Controller
         ]);
 
         Category::create($validateData);
-        return redirect('/main/category')->with('success', 'New Category has been added!');
+        return redirect('/extra/category')->with('success', 'New Category has been added!');
     }
 
     /**
@@ -67,7 +67,7 @@ class CategoryController extends Controller
      */
     public function edit(Category $category)
     {
-        return view('admin.category.edit', [
+        return view('admin.extra.category.edit', [
             'categories' => $category
         ]);
     }
@@ -88,7 +88,7 @@ class CategoryController extends Controller
 
         Category::where('id', $category->id)
             ->update($validateData);
-        return redirect('/main/category')->with('success', 'Category has been updated!');
+        return redirect('/extra/category')->with('success', 'Category has been updated!');
     }
 
     /**
@@ -100,7 +100,7 @@ class CategoryController extends Controller
     public function destroy(Category $category)
     {
         Category::destroy($category->id);
-        return redirect('/main/category')->with('warning', 'Article has been deleted!');
+        return redirect('/extra/category')->with('warning', 'Article has been deleted!');
     }
 
     public function checkSlug(Request $request)

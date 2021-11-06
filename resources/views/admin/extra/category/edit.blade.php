@@ -11,14 +11,15 @@
           <div class="card-header">
             <h4>Add Category</h4>
           </div>
-          <form action="/main/category" method="post">
+          <form action="/extra/category/{{ $categories->slug }}" method="post">
+            @method('put')
             @csrf
           <div class="card-body">
             <div class="form-group row mb-4">
               <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Name Category</label>
               <div class="col-sm-12 col-md-7">
                 <input type="text" class="form-control  @error('name')is-invalid @enderror" id="name" name="name" 
-                value="{{ old('name') }}" autofocus>
+                value="{{ old('name', $categories->name ) }}" autofocus>
                   @error('name')
                   <div class="invalid-feedback">
                     {{ $message }}
@@ -29,7 +30,7 @@
             <div class="form-group row mb-4">
               <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Slug</label>
               <div class="col-sm-12 col-md-7">
-                <input type="text" class="form-control @error('slug')is-invalid @enderror" id="slug" value="{{ old('slug') }}" name="slug" readonly>
+                <input type="text" class="form-control @error('slug')is-invalid @enderror" id="slug" value="{{ old('name', $categories->slug ) }}" name="slug" readonly>
                   @error('slug')
                   <div class="invalid-feedback">
                     {{ $message }}
@@ -40,7 +41,7 @@
             <div class="form-group row mb-4">
               <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3"></label>
               <div class="col-sm-12 col-md-7">
-                <button type="submit" class="btn btn-primary">Create Category</button>
+                <button type="submit" class="btn btn-primary">Update Category</button>
               </div>
             </div>
           </div>
@@ -59,7 +60,7 @@
       const slug = document.querySelector('#slug');
 
       title.addEventListener('change', function () {
-        fetch('/main/category/checkSlug?title=' + title.value)
+        fetch('/extra/category/checkSlug?title=' + title.value)
          .then(response => response.json())
           .then(data => slug.value =  data.slug)
       });

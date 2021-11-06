@@ -10,14 +10,14 @@ class SmsController extends Controller
 {
     public function index()
     {
-        return view('admin.sms.index', [
+        return view('admin.extra.sms.index', [
             'sms' => Sms::all()
         ]);
     }
 
     public function create()
     {
-        return view('admin.sms.create', [
+        return view('admin.extra.sms.create', [
             'sms' => Sms::all()
         ]);
     }
@@ -30,13 +30,13 @@ class SmsController extends Controller
         ]);
 
         Sms::create($validateData);
-        return redirect('/main/sms/create')->with('success', 'API Key has been created!!');
+        return redirect('/extra/sms/create')->with('success', 'API Key has been created!!');
     }
 
     public function destroy(Sms $sms)
     {
         Sms::destroy($sms->id);
-        return redirect('/main/sms/create')->with('warning', 'API Key has been deleted!');
+        return redirect('/extra/sms/create')->with('warning', 'API Key has been deleted!');
     }
 
     public function send(Request $request)
@@ -51,9 +51,9 @@ class SmsController extends Controller
                 'text' => $request->message,
             ]);
 
-            return redirect('/main/whatsapp')->with('success', 'SMS Gateway has been sending!');
+            return redirect('/extra/whatsapp')->with('success', 'SMS Gateway has been sending!');
         } catch (\Exception $e) {
-            return redirect('/main/whatsapp')->with('error', 'SMS Gateway not sent!');
+            return redirect('/extra/whatsapp')->with('error', 'SMS Gateway not sent!');
         }
     }
 }

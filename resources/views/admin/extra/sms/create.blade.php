@@ -8,7 +8,7 @@
   <div class="row">
     <div class="col-12 col-md-6  col-lg-6">
       <div class="card">
-        <form method="POST" action="/main/sms">
+        <form method="POST" action="/extra/sms">
           @csrf
           <div class="card-header">
             <h4>API Key</h4>
@@ -61,7 +61,7 @@
                       <td>{{ $sms->api_key }}</td>
                       <td>{{ $sms->api_secret }}</td>
                       <td>
-                        <form action="/main/sms/{{ $sms->id }}" method="post">
+                        <form action="/extra/sms/{{ $sms->id }}" method="post">
                             @method('delete')
                             @csrf                           
                             <button class="btn btn-sm btn-danger" onclick="return confirm('Are you sure?')"><i class="fas fa-trash"></i></button>
