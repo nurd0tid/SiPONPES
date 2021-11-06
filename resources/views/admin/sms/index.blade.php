@@ -73,7 +73,17 @@
         position: 'topRight'
       });      
     });
-  </script>         
+  </script>     
+  @elseif (session()->has('error'))
+  <script>
+      $(function() {
+      iziToast.error({
+        title: 'Whoops!',
+        message: '{{ session("error") }}.',
+        position: 'topRight'
+      });      
+    });
+  </script>     
   @endif
 @endpush
 @endsection

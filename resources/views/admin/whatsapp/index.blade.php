@@ -18,7 +18,7 @@
           <div class="card-body">
             <div class="form-group">
               <label>Recipent Number</label>
-              <input type="text" name="to" class="form-control" value="6289xxxxxxxxx" readonly>
+              <input type="text" name="to" class="form-control" required>
             </div>
             <div class="form-group">
               <label>From</label>
@@ -116,7 +116,17 @@
         position: 'topRight'
       });      
     });
-  </script>         
+  </script>     
+  @elseif (session()->has('error'))
+  <script>
+      $(function() {
+      iziToast.error({
+        title: 'Whoops!',
+        message: '{{ session("error") }}.',
+        position: 'topRight'
+      });      
+    });
+  </script>     
   @endif
 @endpush
 @endsection

@@ -41,15 +41,19 @@ class SmsController extends Controller
 
     public function send(Request $request)
     {
-        $basic  = new \Nexmo\Client\Credentials\Basic($request->api_key, $request->api_secret);
-        $client = new \Nexmo\Client($basic);
+        try {
+            $basic  = new \Nexmo\Client\Credentials\Basic($request->api_key, $request->api_secret);
+            $client = new \Nexmo\Client($basic);
 
-        $message = $client->message()->send([
-            'to' => $request->to,
-            'from' => $request->from,
-            'text' => $request->message,
-        ]);
+            $message = $client->message()->send([
+                'to' => $request->to,
+                'from' => $request->from,
+                'text' => $request->message,
+            ]);
 
-        return redirect('/main/sms')->with('success', 'SMS has been sending!');
+            return redirect('/main/whatsapp')->with('success', 'SMS Gateway has been sending!');
+        } catch (\Exception $e) {
+            return redirect('/main/whatsapp')->with('error', 'SMS Gateway not sent!');
+        }
     }
 }
