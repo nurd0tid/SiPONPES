@@ -15,6 +15,7 @@
         "laravel/tinker": "^2.5",
         "nexmo/client": "^2.4",
         "nexmo/laravel": "^2.4",
+        "spatie/laravel-permission": "^5.3",
         "yajra/laravel-datatables-oracle": "~9.0"
     },
     "require-dev": {

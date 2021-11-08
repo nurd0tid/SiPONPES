@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controller\Admin;
 
 use Illuminate\Http\Request;
 use App\Models\Sms;
+use App\Http\Controllers\Controller;
 
 class WhatsappController extends Controller
 {

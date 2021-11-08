@@ -1,11 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\BlogController;
-use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\SmsController;
-use App\Http\Controllers\WhatsappController;
-use App\Models\Category;
+use App\Http\Controllers\Admin\{BlogController, CategoryController, SmsController, WhatsappController};
 
 /*
 |--------------------------------------------------------------------------

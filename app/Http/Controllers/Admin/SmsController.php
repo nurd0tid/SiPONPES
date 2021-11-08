@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use Nexmo\Laravel\Facade\Nexmo;
 use App\Models\Sms;
+use App\Http\Controllers\Controller;
 
 class SmsController extends Controller
 {
